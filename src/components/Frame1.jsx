@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { bookRoom } from './actions';
-import styles from './Frame1.module.css';
+import { bookRoom } from './Action';
+//import styles from './Frame1.module.css';
 
 export const Frame1 = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ export const Frame1 = () => {
         <button onClick={() => handleBooking('KING_SUITE')}>Book King Suite</button>
         <button onClick={() => handleBooking('QUEEN_SUITE')}>Book Queen Suite</button>
       </div>
-      {/* More simplified sections as needed */}
+     
     </div>
   );
 };
