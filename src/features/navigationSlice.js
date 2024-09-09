@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isLoggedIn: false, 
-  menuItems: ['Sign-Up', 'Stays', 'Offers', 'About Us'],
+  menuItems: ['SignUp', 'Stays', 'Offers', 'AboutUs', 'ContactUs', 'FAQs', ],
 };
 
 const navigationSlice = createSlice({

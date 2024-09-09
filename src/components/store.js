@@ -7,4 +7,4 @@ export const store = configureStore({
   },
 });
 
-export default store; // Ensure 'store' is exported as default
+export default store; 

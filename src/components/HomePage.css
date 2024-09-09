@@ -1,55 +1,71 @@
-/* HomePage.css */
+
 .home-page {
     text-align: center;
     padding: 20px;
   }
   
   .image-container {
-    max-width: 100%; /* Adjust width as needed */
+    max-width: 100%; 
+    height: 100%;
     margin: 0 auto;
   }
   
   .hotel-image {
-    width: 100%; /* Adjust width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 600px; /* Adjust height */
+    width: 100%; 
+    height: auto;
+    max-height: 600px; 
   }
   
   .image-message {
     font-style: italic;
-    color: gold;
+    color: rgba(197, 169, 11, 0.658);
     margin-top: 10px;
-    font-size: 1.2rem; /* Adjust as needed */
+    font-size: 1.2rem; 
+  }
+
+  .border-box{
+    border: 2px solid rgb(228, 225, 225); 
+
+  padding: 10px;          
+  margin: 10px;          
+  
+
   }
 
 
 .room-offers {
     margin-top: 20px;
+    color: #032B44;
   }
   
   .room-card {
     display: inline-block;
-    width: 300px;
+    width: 500px;
+    height: auto;
     margin: 10px;
     text-align: left;
     border: 1px solid #ddd;
-    border-radius: 8px;
     overflow: hidden;
   }
   
   .room-image {
     width: 100%;
-    height: 100%;
+   
   }
   
   .room-price {
     font-weight: bold;
-    color: #e74c3c;
+    color: white;
+    background-color: #af960c;
+    width: 60px;
+   
+   
   }
   
   .room-description {
     margin-top: 10px;
     font-size: 0.9em;
+    color: black;
   }
 
 .date-picker {
@@ -79,7 +95,7 @@
   }
   
   .guest-group button {
-    background-color: #e74c3c;
+    background-color: #032b44;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -88,6 +104,82 @@
   
   .guest-group span {
     margin: 0 10px;
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
+
+
+
+  .container {
+    background-color: #032b44;
+    padding: 20px;
+    border-radius: 8px;
+    color: #ffffff; 
+  }
+
+  .guests-container {
+    background-color: #ffffff; 
+    padding: 20px;
+    margin: 20px 0; 
+  }    
+
+  .Label{
+    color: #032b44;
+    font-size: large;
+  }
+
+  .room-description-container {
+    background-color: white;
+    padding: 10px; 
+    
+  }
+  h3{
+    color: #af960c
+  }
+
+  .number {
+    color: black;
+    font-size: 1.5em; 
+    margin: 0 10px; 
+  }
+
+  .footer {
+    background-color: #032B44;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer .social-media-links {
+    margin-bottom: 10px;
+  }
+  
+  .footer .social-media-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px; 
+    float: left;
+  }
+  
+  .footer .social-media-links a:hover {
+    opacity: 0.7;
+  }
+  
+  .footer p {
+    margin: 0;
+    float: right;
+    
+  }
+
+  .submit-btn{
+    background-color: #af960c; 
+    color: #032B44;
+    font-size: large;
+    
+  }
+.footer-container{
+  background-color: #af960c;
+}
+
+  
   

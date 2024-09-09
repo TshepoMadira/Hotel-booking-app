@@ -1,17 +1,23 @@
-/* Navbar.css */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #f2f2f2; /* Set your preferred background color */
+    background-color: #f2f2f2; 
   }
   
   .logo {
     font-size: 1.5rem;
+    font-family: 'Granze', sans-serif;
+    
     font-weight: bold;
-    color: #444;
+    color: #af960c;
   }
+
+  /* .logo-slogan{
+    margin-top: 40px;
+  } */
   
   .nav-links {
     display: flex;
@@ -25,7 +31,7 @@
   .nav-links a {
     text-decoration: none;
     color: #444;
-    font-weight: 500;
+    font-weight: 700;
   }
   
   .book-btn {
