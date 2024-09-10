@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { auth } from './Firebase';
+import './Login.css';
 
 const LoginPage = () => {
   const [form, setForm] = useState({
@@ -20,9 +20,11 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      await auth.signInWithEmailAndPassword(form.email, form.password);
+      // This is where Firebase authentication code was removed
+      // Add your custom login logic here
       console.log('User logged in:', form);
-      
+
+      // Reset form or navigate to another page upon successful login if needed
     } catch (error) {
       setError(error.message);
     }

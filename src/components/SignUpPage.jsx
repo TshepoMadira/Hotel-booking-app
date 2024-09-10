@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { auth } from './Firebase';
 import './SignUpPage.css';
 
 const SignUpPage = () => {
@@ -29,8 +28,9 @@ const SignUpPage = () => {
     }
 
     try {
-      await auth.createUserWithEmailAndPassword(form.email, form.password);
+    
       console.log('User registered:', form);
+
       
     } catch (error) {
       setError(error.message);

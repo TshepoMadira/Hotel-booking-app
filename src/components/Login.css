@@ -1,4 +1,4 @@
-/* SignUpPage.css */
+/* LoginPage.css */
 
 /* Basic Page Styles */
 body {
@@ -9,7 +9,7 @@ body {
   }
   
   /* Container Styling */
-  .signup-page {
+  .login-page {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -21,15 +21,14 @@ body {
   }
   
   /* Header Styling */
-  .signup-page h1 {
+  .login-page h1 {
     color: royalblue;
     margin-bottom: 20px;
   }
   
   /* Input Fields */
-  .signup-page input[type="text"],
-  .signup-page input[type="email"],
-  .signup-page input[type="password"] {
+  .login-page input[type="email"],
+  .login-page input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -39,15 +38,14 @@ body {
     transition: border-color 0.3s ease;
   }
   
-  .signup-page input[type="text"]:focus,
-  .signup-page input[type="email"]:focus,
-  .signup-page input[type="password"]:focus {
+  .login-page input[type="email"]:focus,
+  .login-page input[type="password"]:focus {
     border-color: royalblue;
     outline: none;
   }
   
   /* Button Styling */
-  .signup-page button {
+  .login-page button {
     width: 100%;
     background-color: royalblue;
     color: white;
@@ -60,25 +58,25 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  .signup-page button:hover {
+  .login-page button:hover {
     background-color: #003399;
   }
   
   /* Error Message Styling */
-  .signup-page p {
+  .login-page p {
     color: red;
     font-size: 14px;
     margin-top: 10px;
   }
   
   /* Links */
-  .signup-page a {
+  .login-page a {
     color: gold;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
-  .signup-page a:hover {
+  .login-page a:hover {
     color: royalblue;
   }
   
