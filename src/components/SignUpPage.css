@@ -1,6 +1,6 @@
-/* SignUpPage.css */
+/* 
 
-/* Basic Page Styles */
+
 body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
@@ -8,7 +8,7 @@ body {
     padding: 0;
   }
   
-  /* Container Styling */
+
   .signup-page {
     max-width: 400px;
     margin: 50px auto;
@@ -20,13 +20,13 @@ body {
     border-top: 6px solid royalblue;
   }
   
-  /* Header Styling */
+  
   .signup-page h1 {
     color: royalblue;
     margin-bottom: 20px;
   }
   
-  /* Input Fields */
+
   .signup-page input[type="text"],
   .signup-page input[type="email"],
   .signup-page input[type="password"] {
@@ -46,7 +46,7 @@ body {
     outline: none;
   }
   
-  /* Button Styling */
+ 
   .signup-page button {
     width: 100%;
     background-color: royalblue;
@@ -64,14 +64,14 @@ body {
     background-color: #003399;
   }
   
-  /* Error Message Styling */
+ 
   .signup-page p {
     color: red;
     font-size: 14px;
     margin-top: 10px;
   }
   
-  /* Links */
+
   .signup-page a {
     color: gold;
     text-decoration: none;
@@ -81,4 +81,4 @@ body {
   .signup-page a:hover {
     color: royalblue;
   }
-  
+   */
