@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { auth } from './Firebase';
+import './SignUpPage.css';
 
 const SignUpPage = () => {
   const [form, setForm] = useState({
@@ -8,6 +10,7 @@ const SignUpPage = () => {
     confirmEmail: '',
     password: ''
   });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,10 +20,21 @@ const SignUpPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
- 
-    console.log('Form submitted:', form);
+
+    if (form.email !== form.confirmEmail) {
+      setError('Email and confirm email do not match.');
+      return;
+    }
+
+    try {
+      await auth.createUserWithEmailAndPassword(form.email, form.password);
+      console.log('User registered:', form);
+      
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -83,7 +97,11 @@ const SignUpPage = () => {
           />
         </div>
         <button type="submit">Register</button>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
+      <div style={{ marginTop: '10px' }}>
+        <a href="/forgot-password">Forgot Password?</a>
+      </div>
     </div>
   );
 };

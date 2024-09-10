@@ -18,7 +18,7 @@
   
   .image-message {
     font-style: italic;
-    color: rgba(197, 169, 11, 0.658);
+    color: #af960c;
     margin-top: 10px;
     font-size: 1.2rem; 
   }
@@ -71,7 +71,7 @@
 .date-picker {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .date-picker label {
@@ -83,6 +83,7 @@
   .guests {
     display: flex;
     justify-content: space-between;
+    height: 1px
   }
   
   .guest-group {
@@ -132,9 +133,7 @@
     padding: 10px; 
     
   }
-  h3{
-    color: #af960c
-  }
+  
 
   .number {
     color: black;
@@ -142,34 +141,6 @@
     margin: 0 10px; 
   }
 
-  .footer {
-    background-color: #032B44;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footer .social-media-links {
-    margin-bottom: 10px;
-  }
-  
-  .footer .social-media-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 24px; 
-    float: left;
-  }
-  
-  .footer .social-media-links a:hover {
-    opacity: 0.7;
-  }
-  
-  .footer p {
-    margin: 0;
-    float: right;
-    
-  }
 
   .submit-btn{
     background-color: #af960c; 
@@ -181,5 +152,117 @@
   background-color: #af960c;
 }
 
+
+.footer {
+  background-color: #032B44;
+  padding: 20px 50px; 
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.footer-links {
+  display: flex;
+  justify-content: center; 
+  gap: 30px; 
+  margin-bottom: 20px; 
+  flex-direction: column;
+}
+
+
+.footer-links a {
+  text-decoration: none;
+  color: white; 
+  font-size: 19px; 
+  font-weight: 500; 
+}
+
+
+.footer-links a:hover {
+  color: #0056b3;
+}
+
+
+.social-media-links {
+  margin-bottom: 20px;
+}
+
+
+.social-media-links a {
+  text-decoration: none;
+  color: white; 
+  margin: 0 10px;
+  font-size: 24px;
+  float: left;
+  margin-top: 30px;
   
+}
+
+
+.social-media-links a:hover {
+  color: #007bff; 
+}
+
+.pp{
+  float: right;
+  margin-top: 20px;
+  color: white;
+}
+
+.right-link {
+  display: flex;
+  align-items: center;
+ 
   
+}
+
+
+.footer-branding h1 {
+  margin: 0;
+  font-family: 'Jim Nightshade', cursive; 
+  font-size: 24px; 
+  color: #af960c; 
+  margin-right: 1500px;
+}  
+.footer-branding .slogan {
+  margin: 5px 0 0;
+  font-family: 'Jim Nightshade', cursive; 
+  font-size: 16px; 
+  color: white;
+  margin-right: 1500px;
+}
+
+.booking-form {
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.label-Check-In{
+  color: #032B44;
+
+}
+
+.label-Check-Out{
+  color: #032B44;
+}
+
+.book-button{
+  padding: 8px;
+  font-size: 14px;
+  background-color: #af960c;
+  color: white;
+
+}
+
+
+
+
+
+
+
+
+
