@@ -1,6 +1,4 @@
-/* LoginPage.css */
 
-/* Basic Page Styles */
 body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
@@ -8,7 +6,7 @@ body {
     padding: 0;
   }
   
-  /* Container Styling */
+  
   .login-page {
     max-width: 400px;
     margin: 50px auto;
@@ -20,13 +18,13 @@ body {
     border-top: 6px solid royalblue;
   }
   
-  /* Header Styling */
+  
   .login-page h1 {
     color: royalblue;
     margin-bottom: 20px;
   }
   
-  /* Input Fields */
+
   .login-page input[type="email"],
   .login-page input[type="password"] {
     width: 100%;
@@ -44,7 +42,7 @@ body {
     outline: none;
   }
   
-  /* Button Styling */
+  
   .login-page button {
     width: 100%;
     background-color: royalblue;
@@ -62,14 +60,14 @@ body {
     background-color: #003399;
   }
   
-  /* Error Message Styling */
+  
   .login-page p {
     color: red;
     font-size: 14px;
     margin-top: 10px;
   }
   
-  /* Links */
+ 
   .login-page a {
     color: gold;
     text-decoration: none;

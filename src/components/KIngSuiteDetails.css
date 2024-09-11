@@ -1,0 +1,28 @@
+.king-suite-details {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .king-suite-image {
+    width: 60%;
+    max-width: 700px;
+    height: 400px;
+  }
+  
+  .king-suite-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .king-suite-price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  

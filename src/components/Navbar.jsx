@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './Navbar.css';
+import { Link } from 'react-router-dom'; 
 
 
 const Navbar = () => {
@@ -8,12 +9,12 @@ const Navbar = () => {
 
   
   const handleBookClick = () => {
-    window.location.href = '/book';
+    // window.location.href = '/book';
   };
 
   return (
     <nav className="navbar">
-      <div className="logo">aragon Hotel</div>
+      <div className="logo">Paragon Hotel</div>
       
       <ul className="nav-links">
         {menuItems.map((item, index) => (
@@ -22,9 +23,9 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <button className="book-btn" onClick={handleBookClick}>
-        Book
-      </button>
+      <Link to='/signup'>
+      <button className="book-btn" onClick={handleBookClick}>Book</button>
+      </Link>
     </nav>
   );
 };

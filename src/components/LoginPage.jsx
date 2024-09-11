@@ -20,11 +20,10 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      // This is where Firebase authentication code was removed
-      // Add your custom login logic here
+     
       console.log('User logged in:', form);
 
-      // Reset form or navigate to another page upon successful login if needed
+      
     } catch (error) {
       setError(error.message);
     }

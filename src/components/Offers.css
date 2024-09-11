@@ -1,0 +1,42 @@
+.offer-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.offer-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.offer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.offer-image {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.offer-content {
+    flex: 1;
+}
+
+.offer-title {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.offer-description {
+    margin: 5px 0 0;
+    color: #777;
+}

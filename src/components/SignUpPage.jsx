@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-// import { auth } from './Firebase'; 
+import { auth } from './Firebase'; 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import './SignUpPage.css';
 
 const SignUpPage = () => {
@@ -12,6 +13,7 @@ const SignUpPage = () => {
     password: ''
   });
   const [error, setError] = useState('');
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +35,8 @@ const SignUpPage = () => {
       await createUserWithEmailAndPassword(auth, form.email, form.password);
       console.log('User registered:', form);
 
+     
+      navigate('/login');
     } catch (error) {
       setError(error.message);
     }
@@ -108,3 +112,4 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
+  

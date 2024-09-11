@@ -16,7 +16,7 @@ const HomePage = () => {
       <Navbar />
       <div className="image-container">
         <img
-          src="src/assets/images/unnamed.jpg"
+          src="src/assets/images/valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg"
           alt="Hotel"
           className="hotel-image"
         />
@@ -28,24 +28,27 @@ const HomePage = () => {
       <div className="container">
         <div className="room-offers">
           <h2>Room Offers</h2>
-          <div className="room-card">
-            <h3>King Suite</h3>
-            <img
-              src="src/assets/images/unnamed (1).jpg"
-              alt="King Suite"
-              className="room-image"
-            />
-            <p className="room-price">R5000</p>
-            <div className='room-description-container'>
-              <p className="room-description">
-                -Two bathrooms with double sink vanity<br />
-                -Flat screen TV<br />
-                -Full size sofa with lounge chairs<br />
-                -Free Uncapped wifi<br />
-                -Private Balcony
-              </p>
+          <Link to="/king-suite-details">
+            <div className="room-card">
+              <h3>King Suite</h3>
+              <img
+                src="src/assets/images/unnamed (1).jpg"
+                alt="King Suite"
+                className="room-image"
+              />
+              <p className="room-price">R5000</p>
+              <div className='room-description-container'>
+                <p className="room-description">
+                  -Two bathrooms with double sink vanity<br />
+                  -Flat screen TV<br />
+                  -Full size sofa with lounge chairs<br />
+                  -Free Uncapped wifi<br />
+                  -Private Balcony
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
+          <Link to="/queen-suite-details">
           <div className="room-card">
             <h3>Queen Suite</h3>
             <img
@@ -62,6 +65,8 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </Link>
+          <Link to="/guest-room-details">
           <div className="room-card">
             <h3>Guest Room</h3>
             <img
@@ -80,39 +85,40 @@ const HomePage = () => {
               </p>
             </div>
           </div>
+          </Link>
         </div>
 
         <div className="booking-form">
-  <div className="date-picker">
-    <label className='label-Check-In'>
-      Check-In:
-      <input type="date" />
-    </label>
-    <label  className='label-Check-Out'>
-      Check-Out:
-      <input type="date" />
-    </label>
-  </div>
-  <div className="guests-container">
-    <div className="guests">
-      <div className="guest-group">
-        <label className="Label">Adults</label>
-        <button onClick={() => decrement(setNumAdults, numAdults)}>-</button>
-        <span className="number">{numAdults}</span>
-        <button onClick={() => increment(setNumAdults, numAdults)}>+</button>
-      </div>
-      <div className="guest-group">
-        <label className="Label">Children</label>
-        <button onClick={() => decrement(setNumChildren, numChildren)}>-</button>
-        <span className="number">{numChildren}</span>
-        <button onClick={() => increment(setNumChildren, numChildren)}>+</button>
-      </div>
-    </div>
-  </div>
-  <Link to="/signup">
-    <button className="book-button">Book</button>
-  </Link>
-</div>
+          <div className="date-picker">
+            <label className='label-Check-In'>
+              Check-In:
+              <input type="date" />
+            </label>
+            <label className='label-Check-Out'>
+              Check-Out:
+              <input type="date" />
+            </label>
+          </div>
+          <div className="guests-container">
+            <div className="guests">
+              <div className="guest-group">
+                <label className="Label">Adults</label>
+                <button onClick={() => decrement(setNumAdults, numAdults)}>-</button>
+                <span className="number">{numAdults}</span>
+                <button onClick={() => increment(setNumAdults, numAdults)}>+</button>
+              </div>
+              <div className="guest-group">
+                <label className="Label">Children</label>
+                <button onClick={() => decrement(setNumChildren, numChildren)}>-</button>
+                <span className="number">{numChildren}</span>
+                <button onClick={() => increment(setNumChildren, numChildren)}>+</button>
+              </div>
+            </div>
+          </div>
+          <Link to="/signup">
+            <button className="book-button">Book</button>
+          </Link>
+        </div>
 
         <footer className="footer">
           <div className="footer-content">

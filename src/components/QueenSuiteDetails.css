@@ -1,0 +1,27 @@
+.queen-suite-details {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .queen-suite-image {
+    width: 60%;
+    max-width: 600px;
+    height: 400px;
+  }
+  
+  .queen-suite-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .queen-suite-price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
