@@ -25,4 +25,10 @@
     color: #007bff;
     text-decoration: none;
   }
+  .kitchen-image{
+    width: 60%;
+    max-width: 500px;
+    height: 400px;
+
+  }
   

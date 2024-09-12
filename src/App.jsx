@@ -12,6 +12,7 @@ import FAQs from './components/FAQs';
 import KingSuitesDetails from './components/KingSuitesDetails';
 import QueenSuiteDetails from './components/QueenSuiteDetails';
 import GuestRoomDetails from './components/GuestRoomDetails';
+import ForgotPassword from './components/ForgortPassword';
 import './App.css';
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/king-suite-details" element={<KingSuitesDetails />} />
         <Route path="/queen-suite-details" element={<QueenSuiteDetails />} />
         <Route path="guest-room-details" element={<GuestRoomDetails />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
 
       </Routes>

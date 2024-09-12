@@ -116,7 +116,7 @@ const HomePage = () => {
             </div>
           </div>
           <Link to="/signup">
-            <button className="book-button">Book</button>
+            <button className="check-availability-button">Check Availability</button>
           </Link>
         </div>
 

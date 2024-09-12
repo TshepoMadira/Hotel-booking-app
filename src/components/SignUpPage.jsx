@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { auth } from './Firebase'; 
+import { auth, db } from './Firebase'; 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import './SignUpPage.css';
 
@@ -32,10 +33,18 @@ const SignUpPage = () => {
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, form.email, form.password);
-      console.log('User registered:', form);
+      
+      const userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
+      const user = userCredential.user;
 
-     
+   
+      await setDoc(doc(db, 'users', user.uid), {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email
+      });
+
+      console.log('User registered and details stored:', form);
       navigate('/login');
     } catch (error) {
       setError(error.message);
@@ -112,4 +121,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-  
