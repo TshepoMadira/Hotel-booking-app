@@ -4,19 +4,21 @@
   }
   
   .guest-room-image {
-    width: 60%;
+    width: 35%;
     max-width: 500px;
-    height: 400px;
+    height: 300px;
   }
   
   .guest-room-description {
     font-size: 16px;
     line-height: 1.5;
+    color: white;
   }
   
   .guest-room-price {
     font-size: 24px;
     font-weight: bold;
+    color: white;
   }
   
   a {
@@ -26,9 +28,16 @@
     text-decoration: none;
   }
   .kitchen-image{
-    width: 60%;
+    width: 35%;
     max-width: 500px;
-    height: 400px;
+    height: 300px;
 
+  }
+  h2{
+    color: #032B44;
+  }
+
+  .kitchen-description{
+    color: white;
   }
   

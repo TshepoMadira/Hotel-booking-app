@@ -15,6 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">Paragon Hotel</div>
+      {/* <p >Model of excellence and perfection</p> */}
       
       <ul className="nav-links">
         {menuItems.map((item, index) => (

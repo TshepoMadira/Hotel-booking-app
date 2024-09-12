@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import './KingSuiteDetails.css';
+import './KingSuiteDetails.css';
 
 const KingSuiteDetails = () => {
   return (
@@ -50,12 +50,12 @@ const KingSuiteDetails = () => {
 
       <div className="buttons">
         
-        <Link to="/" className="button">
+        <Link to="/" className="back-to-home-btn">
           Back to Home
         </Link>
         
         
-        <Link to="/signup" className="button">
+        <Link to="/signup" className="book-button">
           Book Now
         </Link>
       </div>

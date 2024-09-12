@@ -1,22 +1,25 @@
 .king-suite-details {
     padding: 20px;
     text-align: center;
+    
   }
   
-  .king-suite-image {
-    width: 60%;
+  .suite-image {
+    width: 35%;
     max-width: 700px;
-    height: 400px;
+    height: 300px;
   }
   
-  .king-suite-description {
+  .suite-description {
+    color: white;
     font-size: 16px;
     line-height: 1.5;
   }
   
-  .king-suite-price {
+  .suite-price {
     font-size: 24px;
     font-weight: bold;
+    color: white
   }
   
   a {
@@ -25,4 +28,25 @@
     color: #007bff;
     text-decoration: none;
   }
+
+  .back-to-home-btn{
+    background-color: #af960c;
+    color: #032B44;
+    width: 115px;
+    height: 25px;
+    font-weight: bold;
+  }
+  .book-button{
+    background-color: #af960c;
+    color: #032B44;
+    width: 115px;
+    height: 25px;
+    font-weight: bold;
+    margin-left: 30px;
+
+  }
+
+  
+  
+  
   

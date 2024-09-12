@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './Login.css';
 
 const LoginPage = () => {
@@ -7,6 +8,8 @@ const LoginPage = () => {
     password: ''
   });
   const [error, setError] = useState('');
+
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +26,8 @@ const LoginPage = () => {
      
       console.log('User logged in:', form);
 
-      
+     
+      navigate('/booking');
     } catch (error) {
       setError(error.message);
     }
@@ -32,37 +36,40 @@ const LoginPage = () => {
   return (
     <div className="login-page">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
+      <div className="login-container">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit">Login</button>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+        </form>
+
+        <div style={{ marginTop: '10px' }}>
+          <a href="/forgot-password">Forgot Password?</a>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
+        <div style={{ marginTop: '10px' }}>
+          <a href="/signup">Need an account? Sign Up</a>
         </div>
-        <button type="submit">Login</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-      </form>
-      <div style={{ marginTop: '10px' }}>
-        <a href="/forgot-password">Forgot Password?</a>
-      </div>
-      <div style={{ marginTop: '10px' }}>
-        <a href="/signup">Need an account? Sign Up</a>
       </div>
     </div>
   );

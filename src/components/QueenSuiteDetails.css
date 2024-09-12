@@ -4,18 +4,20 @@
   }
   
   .queen-suite-image {
-    width: 60%;
+    width: 50%;
     max-width: 600px;
-    height: 400px;
+    height: 300px;
   }
   
   .queen-suite-description {
     font-size: 16px;
     line-height: 1.5;
+    color: white;
   }
   
   .queen-suite-price {
     font-size: 24px;
+    color: white;
     font-weight: bold;
   }
   
@@ -27,10 +29,25 @@
   }
 
   .lounge-image{
-    width: 60%;
+    width: 50%;
     max-width: 600px;
-    height: 400px;
+    height: 300px;
   }
+
+  h1{
+    color: #032B44;
+  }
+
+  .lounge-description{
+    color: white;
+  }
+
+ .heading{
+  color: white;
+  
+ }
+
+  
     
     
   

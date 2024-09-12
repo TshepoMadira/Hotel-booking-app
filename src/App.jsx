@@ -13,6 +13,9 @@ import KingSuitesDetails from './components/KingSuitesDetails';
 import QueenSuiteDetails from './components/QueenSuiteDetails';
 import GuestRoomDetails from './components/GuestRoomDetails';
 import ForgotPassword from './components/ForgortPassword';
+import Accommodations from './AdminPanel/Accommodations';
+import Reservations from './AdminPanel/Reservations';
+import BookingForm from './components/BookingPlatform';
 import './App.css';
 
 
@@ -32,6 +35,9 @@ function App() {
         <Route path="/queen-suite-details" element={<QueenSuiteDetails />} />
         <Route path="guest-room-details" element={<GuestRoomDetails />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path='/accommodations' element={<Accommodations />} />
+        <Route path='reservations' element={<Reservations />} />
+        <Route path='booking' element={<BookingForm />} />
 
 
       </Routes>

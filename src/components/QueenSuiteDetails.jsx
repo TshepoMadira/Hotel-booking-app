@@ -20,7 +20,7 @@ const QueenSuiteDetails = () => {
       <p className="queen-suite-price">R5100</p>
 
       <div className="lounge-details">
-        <h2>Lounge Details</h2>
+        <h2 className='heading'>Lounge Details</h2>
         <img
           src="src/assets/images/Bespoke fitted furniture hand made in the UK by Empatika.jpeg"
           alt="Lounge"
@@ -36,12 +36,12 @@ const QueenSuiteDetails = () => {
 
       <div className="buttons">
         
-        <Link to="/" className="button">
+        <Link to="/" className="back-to-home-btn">
           Back to Home
         </Link>
 
        
-        <Link to="/signup" className="button">
+        <Link to="/signup" className="book-button">
           Book Now
         </Link>
       </div>

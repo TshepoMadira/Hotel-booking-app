@@ -1,0 +1,84 @@
+/* AdminReservations.css */
+
+.admin-reservations {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="text"] {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.reservation-list {
+  list-style: none;
+  padding: 0;
+}
+
+.reservation-list li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-list h4 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.reservation-list p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.reservation-list img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.reservation-list button {
+  background-color: #28a745;
+  margin-right: 5px;
+}
+
+.reservation-list button:nth-of-type(2) {
+  background-color: #dc3545;
+}
+
+.reservation-list button:nth-of-type(2):hover {
+  background-color: #c82333;
+}

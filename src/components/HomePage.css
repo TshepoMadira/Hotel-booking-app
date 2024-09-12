@@ -2,6 +2,7 @@
 .home-page {
     text-align: center;
     padding: 20px;
+    
   }
   
   .image-container {
@@ -80,16 +81,18 @@
     flex-direction: column;
     width: 45%;
   }
-  
+
   .guests {
     display: flex;
     justify-content: space-between;
-    height: 1px
+    height: 1px;
+  
   }
   
   .guest-group {
     display: flex;
     align-items: center;
+    
   }
   
   .guest-group label {
@@ -114,14 +117,15 @@
   .container {
     background-color: #032b44;
     padding: 20px;
-    border-radius: 8px;
-    color: #ffffff; 
+    
+    
   }
 
   .guests-container {
     background-color: #ffffff; 
     padding: 20px;
     margin: 20px 0; 
+   
   }    
 
   .Label{
@@ -263,6 +267,7 @@ h3{
   color:#af960c;
   
 }
+
 
 
 

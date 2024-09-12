@@ -37,12 +37,12 @@ const GuestRoomDetails = () => {
 
       <div className="buttons">
         
-        <Link to="/" className="button">
+        <Link to="/" className="back-to-home-btn">
           Back to Home
         </Link>
 
         
-        <Link to="/signup" className="button">
+        <Link to="/signup" className="book-button">
           Book Now
         </Link>
       </div>
