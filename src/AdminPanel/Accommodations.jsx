@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../components/Firebase';
-import { storagel } from '../components/Firebase';
-
+import { storage } from '../components/Firebase';
 import './Accommodations.css';
+import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
 
 const Accommodations = () => {
   const [accommodations, setAccommodations] = useState([]);
@@ -18,8 +18,8 @@ const Accommodations = () => {
 
   useEffect(() => {
     const fetchAccommodations = async () => {
-      const snapshot = await db.collection('accommodations').get();
-      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const querySnapshot = await getDocs(collection(db, 'accommodations'));
+      const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setAccommodations(data);
     };
 
@@ -40,22 +40,20 @@ const Accommodations = () => {
     let imageUrl = form.imageUrl;
 
     if (selectedFile) {
-     
-      const storageRef = storage.ref(`accommodation_images/${selectedFile.name}`);
-      await storageRef.put(selectedFile);
-      imageUrl = await storageRef.getDownloadURL(); 
-    }
+  const fileRef = ref(storage, `accommodation_images/${selectedFile.name}`);
+  await uploadBytes(fileRef, selectedFile);
+  imageUrl = await getDownloadURL(fileRef);
+}
 
     if (editing) {
-      await db.collection('accommodations').doc(form.id).update({
+      await updateDoc(doc(db, 'accommodations', form.id), {
         name: form.name,
         price: form.price,
         description: form.description,
         imageUrl: imageUrl,
       });
-      setEditing(false);
     } else {
-      await db.collection('accommodations').add({
+      await addDoc(collection(db, 'accommodations'), {
         name: form.name,
         price: form.price,
         description: form.description,
@@ -73,7 +71,7 @@ const Accommodations = () => {
   };    
 
   const handleDelete = async (id) => {
-    await db.collection('accommodations').doc(id).delete();
+    await deleteDoc(doc(db, 'accommodations', id));
     setAccommodations(accommodations.filter(acc => acc.id !== id));
   };
 

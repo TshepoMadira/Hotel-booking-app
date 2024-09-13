@@ -100,7 +100,7 @@ const SignUpPage = () => {
           />
         </div>
         <div>
-          <label ClassName="password">Password:</label>
+          <label className="password">Password:</label>
           <input
             type="password"
             id="password"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../components/Firebase';
+// import { db } from '../components/Firebase';
 import './AdminReservations.css';
 
 const AdminReservations = () => {
