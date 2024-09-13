@@ -50,9 +50,9 @@ function BookingPlatform({ onSearch }) {
                         required
                     >
                         <option value="">Select a room type</option>
-                        <option value="single">Single Room</option>
-                        <option value="double">Double Room</option>
-                        <option value="suite">Suite</option>
+                        <option value="single">King Suites</option>
+                        <option value="double">Queen Suites</option>
+                        <option value="suite">Guest Rooms</option>
                     </select>
                 </label>
                 <button type="submit">Check Availability</button>

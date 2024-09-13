@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { db, storage } from '../firebase'; 
+import { db } from '../components/Firebase';
+import { storagel } from '../components/Firebase';
+
 import './Accommodations.css';
 
 const Accommodations = () => {
@@ -68,7 +70,7 @@ const Accommodations = () => {
     const snapshot = await db.collection('accommodations').get();
     const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     setAccommodations(data);
-  };
+  };    
 
   const handleDelete = async (id) => {
     await db.collection('accommodations').doc(id).delete();
