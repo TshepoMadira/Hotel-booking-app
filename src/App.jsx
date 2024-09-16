@@ -13,10 +13,13 @@ import KingSuitesDetails from './components/KingSuitesDetails';
 import QueenSuiteDetails from './components/QueenSuiteDetails';
 import GuestRoomDetails from './components/GuestRoomDetails';
 import ForgotPassword from './components/ForgortPassword';
-import Accommodations from './AdminPanel/Accommodations';
+import Accommodations from './AdminPanel/AccommodationsAdmin';
 import Reservations from './AdminPanel/Reservations';
 import BookingForm from './components/BookingPlatform';
+import Confirmation from './components/ConfirmationBooking';
+import PayPalButton from './components/PayPalButton';
 import './App.css';
+import UserProfile from './components/UserProfile';
 
 
 function App() {
@@ -38,6 +41,10 @@ function App() {
         <Route path='/accommodations' element={<Accommodations />} />
         <Route path='reservations' element={<Reservations />} />
         <Route path='booking' element={<BookingForm />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path='paypal' element={<PayPalButton />} />
+        <Route path='userprofile' element={<UserProfile />} />
+
 
 
       </Routes>

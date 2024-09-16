@@ -3,7 +3,7 @@ import { auth, db } from './Firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import './SignUp.css';
+import './signup.css';
 
 const SignUpPage = () => {
   const [form, setForm] = useState({

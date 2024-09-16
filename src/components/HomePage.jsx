@@ -7,9 +7,19 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const HomePage = () => {
   const [numChildren, setNumChildren] = useState(0);
   const [numAdults, setNumAdults] = useState(1);
+  const [reviews, setReviews] = useState([]);
+  const [newReview, setNewReview] = useState({ name: '', rating: '', comment: '' });
 
   const increment = (setter, value) => setter(value + 1);
   const decrement = (setter, value) => setter(value > 0 ? value - 1 : 0);
+
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    if (newReview.name && newReview.rating && newReview.comment) {
+      setReviews([...reviews, newReview]);
+      setNewReview({ name: '', rating: '', comment: '' }); // Reset form
+    }
+  };
 
   return (
     <div className="home-page">
@@ -118,6 +128,55 @@ const HomePage = () => {
           <Link to="/signup">
             <button className="check-availability-button">Check Availability</button>
           </Link>
+        </div>
+
+        {/* Review Form */}
+        <div className="review-section">
+          <h2>Leave a Review</h2>
+          <form onSubmit={handleReviewSubmit}>
+            <label>
+              Name:
+              <input 
+                type="text" 
+                value={newReview.name} 
+                onChange={(e) => setNewReview({ ...newReview, name: e.target.value })} 
+              />
+            </label>
+            <label>
+              Rating (1-5):
+              <input 
+                type="number" 
+                min="1" 
+                max="5" 
+                value={newReview.rating} 
+                onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })} 
+              />
+            </label>
+            <label>
+              Comment:
+              <textarea 
+                value={newReview.comment} 
+                onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+              />
+            </label>
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
+
+        {/* Display Reviews */}
+        <div className="reviews-display">
+          <h2>Guest Reviews</h2>
+          {reviews.length > 0 ? (
+            reviews.map((review, index) => (
+              <div key={index} className="review">
+                <h4>{review.name}</h4>
+                <p>Rating: {review.rating}/5</p>
+                <p>{review.comment}</p>
+              </div>
+            ))
+          ) : (
+            <p>No reviews yet. Be the first to leave a review!</p>
+          )}
         </div>
 
         <footer className="footer">
