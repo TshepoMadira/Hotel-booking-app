@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import './KingSuiteDetails.css';
+import './KingSuiteDetails.css';
 
 const KingSuiteDetails = () => {
   return (
     <div className="king-suite-details">
-      <h1>King Suite Details</h1>
+      <h1 className='kingsuite'>King Suite Details</h1>
 
       <div className="suite-section">
         <img

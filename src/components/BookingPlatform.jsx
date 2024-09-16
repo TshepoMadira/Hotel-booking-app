@@ -33,8 +33,20 @@ function BookingPlatform() {
 
     const handlePaymentSuccess = (details) => {
         console.log("Payment successful:", details);
+        console.log("Booking details:", { checkinDate, checkoutDate, roomType, numRooms, numAdults, numChildren, bookingAmount });
+        alert("Payment is confirmed!");
        
         navigate('/confirmation'); 
+        state: {
+            checkinDate,
+            checkoutDate,
+            roomType,
+            numRooms,
+            numAdults,
+            numChildren,
+            bookingAmount
+        }
+    
     };
 
     // const handleLogout = () => {
@@ -76,13 +88,14 @@ function BookingPlatform() {
                             <option value="king">King Suites</option>
                             <option value="queen">Queen Suites</option>
                             <option value="guest">Guest Rooms</option>
+                            
                         </select>
                     </label>
                     <label>
                         Number of Rooms:
                         <input
                             type="number"
-                            min="1"
+                            min="0"
                             value={numRooms}
                             onChange={(e) => setNumRooms(e.target.value)}
                             required
@@ -92,7 +105,7 @@ function BookingPlatform() {
                         Number of Adults:
                         <input
                             type="number"
-                            min="1"
+                            min="0"
                             value={numAdults}
                             onChange={(e) => setNumAdults(e.target.value)}
                             required
@@ -107,7 +120,7 @@ function BookingPlatform() {
                             onChange={(e) => setNumChildren(e.target.value)}
                         />
                     </label>
-                    <button type="submit">Submit</button>
+                    <button  className='submit-btn' type="submit">Submit</button>
                 </form>
             ) : (
                 <div className="payment-section">

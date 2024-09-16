@@ -270,12 +270,13 @@ h3{
 
 
 
-/* HomePage.css */
+
 .review-section {
   margin-top: 40px;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
+  height: 440px;
 }
 
 .review-section h2 {

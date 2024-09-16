@@ -5,7 +5,7 @@ import './QueenSuiteDetails.css';
 const QueenSuiteDetails = () => {
   return (
     <div className="queen-suite-details">
-      <h1>Queen Suite Details</h1>
+      <h1 className='Queensuite'>Queen Suite Details</h1>
       <img
         src="src/assets/images/Ralph Wide Base King Sized Bed Frame - Black Velvet with Storage.jfif"
         alt="Queen Suite"

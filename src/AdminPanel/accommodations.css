@@ -1,69 +1,127 @@
 
 
-.accommodations {
-    padding: 20px;
-  }
+
+.Container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #ebe9e921;
+}
+
+
+.Container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: black;
   
-  .accommodation-form {
-    margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+  color: black;
+}
+
+input, textarea {
+  width: 66%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+
+.add-accommodation-btn {
+  background-color: #af960c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 400px
+}
+
+
+
+.add-accommodation-btn:hover {
+  background-color: #645709;
+}
+
+.edit-button{
+  background-color: #af960c;
+  margin-right: 10px;
+  border: none;
+}
+.edit-button:hover{
+  background-color: #645709;
+}
+.delete-button{
+  background-color: #af960c;
+  margin-right: 10px;
+  border: none;
+}
+.delete-button:hover{
+  background-color: #645709;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .Container {
+    padding: 15px;
   }
-  
-  .accommodation-form input,
-  .accommodation-form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+  .Container h2 {
+    font-size: 20px;
   }
-  
-  .accommodation-form button {
-    padding: 10px 20px;
-    background-color: #af960c;
-    color: #032B44;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+
+  .add-accommodation-btn {
+    padding: 8px 16px;
+    font-size: 14px;
   }
-  
-  .accommodation-form button:hover {
-    background-color: #af970c91;
+}
+
+@media (max-width: 480px) {
+  .Container h2 {
+    font-size: 18px;
   }
-  
-  .accommodation-list {
-    list-style-type: none;
-    padding: 0;
+
+  .add-accommodation-btn {
+    padding: 6px 12px;
+    font-size: 12px;
   }
-  
-  .accommodation-list li {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    position: relative;
-  }
-  
-  .accommodation-list button {
-    padding: 5px 10px;
-    margin-right: 10px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .accommodation-list button:hover {
-    background-color: #c82333;
-  }
-  
-  .accommodation-list button:nth-of-type(1) {
-    background-color: #007bff;
-  }
-  
-  .accommodation-list button:nth-of-type(1):hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+
+

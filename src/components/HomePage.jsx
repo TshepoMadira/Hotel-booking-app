@@ -17,7 +17,7 @@ const HomePage = () => {
     e.preventDefault();
     if (newReview.name && newReview.rating && newReview.comment) {
       setReviews([...reviews, newReview]);
-      setNewReview({ name: '', rating: '', comment: '' }); // Reset form
+      setNewReview({ name: '', rating: '', comment: '' }); 
     }
   };
 
@@ -130,8 +130,7 @@ const HomePage = () => {
           </Link>
         </div>
 
-        {/* Review Form */}
-        <div className="review-section">
+        {/* <div className="review-section">
           <h2>Leave a Review</h2>
           <form onSubmit={handleReviewSubmit}>
             <label>
@@ -163,7 +162,7 @@ const HomePage = () => {
           </form>
         </div>
 
-        {/* Display Reviews */}
+       
         <div className="reviews-display">
           <h2>Guest Reviews</h2>
           {reviews.length > 0 ? (
@@ -177,7 +176,7 @@ const HomePage = () => {
           ) : (
             <p>No reviews yet. Be the first to leave a review!</p>
           )}
-        </div>
+        </div> */}
 
         <footer className="footer">
           <div className="footer-content">

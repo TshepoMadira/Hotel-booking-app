@@ -3,6 +3,9 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    
+    
+    
   }
   
   .booking-form label {
@@ -13,24 +16,25 @@
   
   .booking-form input,
   .booking-form select {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
   }
   
-  button {
+  .submit-btn {
     padding: 10px 20px;
     background-color: #af960c;
     color: white;
     border: none;
     cursor: pointer;
+    width: 420px;
   }
   
-  /* button:hover {
-    background-color: #0056b3;
-  } */
+  .submit-btn:hover {
+    background-color: #615307e8;
+  }
   
   .payment-section {
     margin-top: 30px;
@@ -46,4 +50,6 @@
   .Booking-platform-heading{
     color: white;
   }
+
+  
   

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { db } from '../components/Firebase';
+import { db } from '../components/Firebase';
 import './AdminReservations.css';
 
 const AdminReservations = () => {
@@ -66,8 +66,8 @@ const AdminReservations = () => {
             <p>Check-out: {res.checkOutDate}</p>
             <p>Guests: {res.numberOfGuests}</p>
             <p>Status: {res.status}</p>
-            <button onClick={() => handleApprove(res.id)}>Approve</button>
-            <button onClick={() => handleReject(res.id)}>Reject</button>
+            <button className='approve-btn' onClick={() => handleApprove(res.id)}>Approve</button>
+            <button className='reject-btn' onClick={() => handleReject(res.id)}>Reject</button>
           </li>
         ))}
       </ul>

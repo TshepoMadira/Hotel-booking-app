@@ -52,8 +52,8 @@ const SignUpPage = () => {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className='Signup-Container'>
+      <h1 className='signup'>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label className="firstName">First Name:</label>
@@ -114,7 +114,7 @@ const SignUpPage = () => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
       <div style={{ marginTop: '10px' }}>
-        <a href="/forgot-password">Forgot Password?</a>
+        <a className='forgot-link'href="/forgot-password">Forgot Password?</a>
       </div>
     </div>
   );

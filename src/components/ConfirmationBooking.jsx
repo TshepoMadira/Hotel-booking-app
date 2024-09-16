@@ -11,8 +11,10 @@ function ConfirmationBooking () {
 
     const handleConfirm = () => {
         console.log("Booking confirmed!");
+        alert("Booking is confirmed!");
+        
        
-        navigate('/');
+        // navigate('/');
     };
 
     return (

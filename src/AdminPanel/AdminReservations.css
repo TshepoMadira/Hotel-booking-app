@@ -1,4 +1,4 @@
-/* AdminReservations.css */
+
 
 .admin-reservations {
   font-family: Arial, sans-serif;
@@ -25,8 +25,18 @@ input[type="text"] {
   margin-right: 10px;
 }
 
-button {
-  background-color: #007bff;
+.approve-button {
+  background-color: #af960c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.reject-button {
+  background-color: #af960c;
   color: white;
   border: none;
   border-radius: 4px;
@@ -36,9 +46,7 @@ button {
   margin-right: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
+
 
 .reservation-list {
   list-style: none;
