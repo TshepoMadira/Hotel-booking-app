@@ -1,5 +1,5 @@
 
-// import { db } from './components/Firebase';
+// import { db } from './Firebase';
 // import { doc, getDoc, setDoc, collection, query, where, getDocs } from 'firebase/firestore';
 
 

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PayPalButton from './PayPalButton'; 
@@ -117,7 +116,7 @@ function BookingPlatform() {
     };
 
     const handleReviewSubmitted = () => {
-        
+       
     };
 
     if (loading) {
@@ -176,18 +175,19 @@ function BookingPlatform() {
                     </label>
                     <label>
                         Room Type:
-                        <select
-                            value={roomType}
-                            onChange={(e) => setRoomType(e.target.value)}
-                            required
-                        >
-                            <option value="">Select a room type</option>
+                        <div className="room-type-selection">
                             {accommodations.map(room => (
-                                <option key={room.id} value={room.id}>
-                                    {room.name} - ${room.price} per room
-                                </option>
+                                <div
+                                    key={room.id}
+                                    className={`room-box ${room.id === roomType ? 'selected' : ''}`}
+                                    onClick={() => setRoomType(room.id)}
+                                >
+                                    <h3>{room.name}</h3>
+                                    <p>Price: R{room.price} per room</p>
+                                    <p>{room.description}</p>
+                                </div>
                             ))}
-                        </select>
+                        </div>
                     </label>
                     <label>
                         Number of Rooms:

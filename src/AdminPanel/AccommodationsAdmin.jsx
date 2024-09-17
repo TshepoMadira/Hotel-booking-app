@@ -6,7 +6,7 @@ import './accommodations.css';
 
 const AccommodationsAdmin = () => {
   const [name, setName] = useState('');
-  const [location, setLocation] = useState('');
+  // const [location, setLocation] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
   const [accommodations, setAccommodations] = useState([]);
@@ -41,7 +41,7 @@ const AccommodationsAdmin = () => {
         const accommodationRef = doc(db, 'accommodations', editId);
         await updateDoc(accommodationRef, {
           name,
-          location,
+          // location,
           price,
           description,
         });
@@ -49,14 +49,14 @@ const AccommodationsAdmin = () => {
       } else {
         await addDoc(collection(db, 'accommodations'), {
           name,
-          location,
+          // location,
           price,
           description,
         });
         alert('Accommodation added successfully!');
       }
       setName('');
-      setLocation('');
+      // setLocation('');
       setPrice('');
       setDescription('');
       setEditId(null);
@@ -71,7 +71,7 @@ const AccommodationsAdmin = () => {
     const accommodation = accommodations.find(accom => accom.id === id);
     if (accommodation) {
       setName(accommodation.name);
-      setLocation(accommodation.location);
+      // setLocation(accommodation.location);
       setPrice(accommodation.price);
       setDescription(accommodation.description);
       setEditId(id);
@@ -102,7 +102,7 @@ const AccommodationsAdmin = () => {
             required
           />
         </div>
-        <div>
+        {/* <div>
           <label>Location:</label>
           <input
             type="text"
@@ -110,7 +110,7 @@ const AccommodationsAdmin = () => {
             onChange={(e) => setLocation(e.target.value)}
             required
           />
-        </div>
+        </div> */}
         <div>
           <label>Price:</label>
           <input
@@ -118,6 +118,7 @@ const AccommodationsAdmin = () => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             required
+            className='price-number'
           />
         </div>
         <div>
@@ -128,6 +129,7 @@ const AccommodationsAdmin = () => {
             required
           ></textarea>
         </div>
+        
         <button className='add-accommodation-btn' type="submit">
           {editId ? 'Update Accommodation' : 'Add Accommodation'}
         </button>
@@ -137,8 +139,8 @@ const AccommodationsAdmin = () => {
         {accommodations.map(accommodation => (
           <li key={accommodation.id}>
             <h4>{accommodation.name}</h4>
-            <p>{accommodation.location}</p>
-            <p>${accommodation.price}</p>
+            {/* <p>{accommodation.location}</p> */}
+            <p>R{accommodation.price}</p>
             <p>{accommodation.description}</p>
             <button className='edit-button'onClick={() => handleEdit(accommodation.id)}>Edit</button>
             <button className='delete-button'onClick={() => handleDelete(accommodation.id)}>Delete</button>
