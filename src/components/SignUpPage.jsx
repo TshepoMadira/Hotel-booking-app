@@ -14,6 +14,7 @@ const SignUpPage = () => {
     password: ''
   });
   const [error, setError] = useState('');
+  const [passwordStrength, setPasswordStrength] = useState('');
   const navigate = useNavigate(); 
 
   const handleChange = (e) => {
@@ -22,6 +23,33 @@ const SignUpPage = () => {
       ...form,
       [name]: value
     });
+
+    // Password strength validation
+    if (name === 'password') {
+      checkPasswordStrength(value);
+    }
+  };
+
+  const checkPasswordStrength = (password) => {
+    const lengthRequirement = password.length >= 8;
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*]/.test(password);
+
+    if (!lengthRequirement) {
+      setPasswordStrength('Password must be at least 8 characters.');
+    } else if (!hasUppercase) {
+      setPasswordStrength('Password must contain at least one uppercase letter.');
+    } else if (!hasLowercase) {
+      setPasswordStrength('Password must contain at least one lowercase letter.');
+    } else if (!hasNumber) {
+      setPasswordStrength('Password must contain at least one number.');
+    } else if (!hasSpecialChar) {
+      setPasswordStrength('Password must contain at least one special character.');
+    } else {
+      setPasswordStrength('Strong password');
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -32,12 +60,15 @@ const SignUpPage = () => {
       return;
     }
 
+    if (passwordStrength !== 'Strong password') {
+      setError('Please enter a stronger password.');
+      return;
+    }
+
     try {
-      
       const userCredential = await createUserWithEmailAndPassword(auth, form.email, form.password);
       const user = userCredential.user;
 
-   
       await setDoc(doc(db, 'users', user.uid), {
         firstName: form.firstName,
         lastName: form.lastName,
@@ -109,6 +140,7 @@ const SignUpPage = () => {
             onChange={handleChange}
             required
           />
+          {passwordStrength && <p style={{ color: passwordStrength === 'Strong password' ? 'green' : 'red' }}>{passwordStrength}</p>}
         </div>
         <button type="submit">Register</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}

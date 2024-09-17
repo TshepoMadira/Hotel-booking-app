@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import { getUserProfile, updateUserProfile, getUserBookings, getUserFavorites } from './api'; 
+// import { getUserProfile, updateUserProfile, getUserBookings, getUserFavorites } from './api';
+import { getAuth } from 'firebase/auth';
 
 function UserProfile() {
     const [profile, setProfile] = useState({});
@@ -8,30 +9,44 @@ function UserProfile() {
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({});
 
+    const auth = getAuth();
+    const userId = auth.currentUser?.uid;
+
     useEffect(() => {
-      
-        async function fetchData() {
-            const userProfile = await getUserProfile();
-            const userBookings = await getUserBookings();
-            const userFavorites = await getUserFavorites();
+        if (userId) {
+            const fetchData = async () => {
+                try {
+                    const userProfile = await getUserProfile(userId);
+                    const userBookings = await getUserBookings(userId);
+                    const userFavorites = await getUserFavorites(userId);
 
-            setProfile(userProfile);
-            setBookings(userBookings);
-            setFavorites(userFavorites);
-            setFormData(userProfile);
+                    setProfile(userProfile || {});
+                    setBookings(userBookings);
+                    setFavorites(userFavorites);
+                    setFormData(userProfile || {});
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            };
+
+            fetchData();
         }
-
-        fetchData();
-    }, []);
+    }, [userId]);
 
     const handleEditClick = () => {
         setIsEditing(true);
     };
 
     const handleSaveClick = async () => {
-        await updateUserProfile(formData);
-        setProfile(formData);
-        setIsEditing(false);
+        if (userId) {
+            try {
+                await updateUserProfile(userId, formData);
+                setProfile(formData);
+                setIsEditing(false);
+            } catch (error) {
+                console.error('Error updating profile:', error);
+            }
+        }
     };
 
     const handleChange = (e) => {
@@ -52,7 +67,7 @@ function UserProfile() {
                             <input
                                 type="text"
                                 name="name"
-                                value={formData.name}
+                                value={formData.name || ''}
                                 onChange={handleChange}
                             />
                         </label>
@@ -61,7 +76,7 @@ function UserProfile() {
                             <input
                                 type="email"
                                 name="email"
-                                value={formData.email}
+                                value={formData.email || ''}
                                 onChange={handleChange}
                             />
                         </label>

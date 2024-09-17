@@ -1,29 +1,36 @@
-// import { firestore } from './Firebase';
 
-// export async function getUserProfile() {
-//     const userId = 'currentUserId'; 
-//     const userProfileDoc = await firestore.collection('users').doc(userId).get();
-//     return userProfileDoc.data();
-// }
+// import { db } from './components/Firebase';
+// import { doc, getDoc, setDoc, collection, query, where, getDocs } from 'firebase/firestore';
 
-// export async function updateUserProfile(profileData) {
-//     const userId = 'currentUserId'; 
-//     await firestore.collection('users').doc(userId).update(profileData);
-// }
 
-// export async function getUserBookings() {
-//     const userId = 'currentUserId'; 
-//     const bookingsSnapshot = await firestore.collection('bookings').where('userId', '==', userId).get();
-//     return bookingsSnapshot.docs.map(doc => doc.data());
-// }
+// export const getUserProfile = async (userId) => {
+//     if (!userId) throw new Error('No user ID provided');
+//     const userDoc = doc(db, 'users', userId);
+//     const docSnap = await getDoc(userDoc);
+//     return docSnap.exists() ? docSnap.data() : null;
+// };
 
-// export async function getUserFavorites() {
-//     const userId = 'currentUserId'; 
-//     const favoritesSnapshot = await firestore.collection('favorites').where('userId', '==', userId).get();
-//     return favoritesSnapshot.docs.map(doc => doc.data());
-// }
 
-// export async function removeFavorite(id) {
-//     const userId = 'currentUserId';
-//     await firestore.collection('favorites').doc(id).delete();
-// }
+// export const updateUserProfile = async (userId, profileData) => {
+//     if (!userId) throw new Error('No user ID provided');
+//     const userDoc = doc(db, 'users', userId);
+//     await setDoc(userDoc, profileData, { merge: true });
+// };
+
+
+// export const getUserBookings = async (userId) => {
+//     if (!userId) throw new Error('No user ID provided');
+//     const bookingsRef = collection(db, 'bookings');
+//     const q = query(bookingsRef, where('userId', '==', userId));
+//     const querySnapshot = await getDocs(q);
+//     return querySnapshot.docs.map(doc => doc.data());
+// };
+
+
+// export const getUserFavorites = async (userId) => {
+//     if (!userId) throw new Error('No user ID provided');
+//     const favoritesRef = collection(db, 'favorites');
+//     const q = query(favoritesRef, where('userId', '==', userId));
+//     const querySnapshot = await getDocs(q);
+//     return querySnapshot.docs.map(doc => doc.data());
+// };
