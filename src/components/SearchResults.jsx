@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { db } from './Firebase'; // Ensure the correct path to your Firebase config
+import { db } from './Firebase'; 
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { useLocation } from 'react-router-dom';
 
@@ -20,9 +20,9 @@ const SearchResults = () => {
 
       try {
         const q = query(
-          collection(db, 'rooms'), // Adjust collection name as needed
-          where('name', '>=', queryParam), // Example filter; adjust to your needs
-          where('name', '<=', queryParam + '\uf8ff') // For partial matches
+          collection(db, 'rooms'),
+          where('name', '>=', queryParam), 
+          where('name', '<=', queryParam + '\uf8ff') 
         );
         const querySnapshot = await getDocs(q);
         const fetchedResults = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));

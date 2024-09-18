@@ -20,6 +20,7 @@ import Confirmation from './components/ConfirmationBooking';
 import PayPalButton from './components/PayPalButton';
 import './App.css';
 import UserProfile from './components/UserProfile';
+import SearchResults from './components/SearchResults'; 
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path='paypal' element={<PayPalButton />} />
         <Route path='userprofile' element={<UserProfile />} />
+        <Route path='/search' element={<SearchResults />} />
 
 
 

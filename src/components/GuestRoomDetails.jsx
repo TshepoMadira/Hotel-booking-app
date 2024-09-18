@@ -5,7 +5,7 @@ import './GuestRoom.css';
 const GuestRoomDetails = () => {
   return (
     <div className="guest-room-details">
-      <h1>Guest Room Details</h1>
+      {/* <h1>Guest Room Details</h1> */}
       <img
         src="src/assets/images/1edfe4de-697e-4803-8d33-76f9795c2e14.jfif"
         alt="Guest Room"
@@ -17,7 +17,7 @@ const GuestRoomDetails = () => {
         - We offer 24hr service delivery to the room.<br />
         - Amenities include free Wi-Fi, premium TV channels, and more.
       </p>
-      <p className="guest-room-price">R2500</p>
+      {/* <p className="guest-room-price">R2500</p> */}
 
       
       <div className="kitchen-details">

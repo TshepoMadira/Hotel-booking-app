@@ -24,7 +24,7 @@ const SignUpPage = () => {
       [name]: value
     });
 
-    // Password strength validation
+    
     if (name === 'password') {
       checkPasswordStrength(value);
     }

@@ -5,7 +5,7 @@ import './QueenSuiteDetails.css';
 const QueenSuiteDetails = () => {
   return (
     <div className="queen-suite-details">
-      <h1 className='Queensuite'>Queen Suite Details</h1>
+      {/* <h1 className='Queensuite'>Queen Suite Details</h1> */}
       <img
         src="src/assets/images/Ralph Wide Base King Sized Bed Frame - Black Velvet with Storage.jfif"
         alt="Queen Suite"
@@ -17,7 +17,7 @@ const QueenSuiteDetails = () => {
         - We offer 24hr service delivery to the room.<br />
         - Amenities include free Wi-Fi, premium channels on TV, and more.
       </p>
-      <p className="queen-suite-price">R5100</p>
+      {/* <p className="queen-suite-price">R5100</p> */}
 
       <div className="lounge-details">
         <h2 className='heading'>Lounge Details</h2>

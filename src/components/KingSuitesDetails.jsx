@@ -5,7 +5,7 @@ import './KingSuiteDetails.css';
 const KingSuiteDetails = () => {
   return (
     <div className="king-suite-details">
-      <h1 className='kingsuite'>King Suite Details</h1>
+      {/* <h1 className='kingsuite'>King Suite Details</h1> */}
 
       <div className="suite-section">
         <img
@@ -19,7 +19,7 @@ const KingSuiteDetails = () => {
           - We offer 24-hour room service.<br />
           - Amenities include free Wi-Fi and premium TV channels.
         </p>
-        <p className="suite-price">R5000</p>
+        {/* <p className="suite-price">R5000</p> */}
       </div>
 
       <div className="suite-section">

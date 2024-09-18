@@ -41,7 +41,7 @@ const AccommodationsAdmin = () => {
         const accommodationRef = doc(db, 'accommodations', editId);
         await updateDoc(accommodationRef, {
           name,
-          // location,
+         
           price,
           description,
         });
@@ -49,14 +49,14 @@ const AccommodationsAdmin = () => {
       } else {
         await addDoc(collection(db, 'accommodations'), {
           name,
-          // location,
+         
           price,
           description,
         });
         // alert('Accommodation added successfully!');
       }
       setName('');
-      // setLocation('');
+      
       setPrice('');
       setDescription('');
       setEditId(null);
@@ -71,7 +71,7 @@ const AccommodationsAdmin = () => {
     const accommodation = accommodations.find(accom => accom.id === id);
     if (accommodation) {
       setName(accommodation.name);
-      // setLocation(accommodation.location);
+      
       setPrice(accommodation.price);
       setDescription(accommodation.description);
       setEditId(id);
@@ -102,15 +102,7 @@ const AccommodationsAdmin = () => {
             required
           />
         </div>
-        {/* <div>
-          <label>Location:</label>
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            required
-          />
-        </div> */}
+       
         <div>
           <label>Price:</label>
           <input
@@ -139,7 +131,6 @@ const AccommodationsAdmin = () => {
         {accommodations.map(accommodation => (
           <li key={accommodation.id}>
             <h4>{accommodation.name}</h4>
-            {/* <p>{accommodation.location}</p> */}
             <p>R{accommodation.price}</p>
             <p>{accommodation.description}</p>
             <button className='edit-button'onClick={() => handleEdit(accommodation.id)}>Edit</button>
