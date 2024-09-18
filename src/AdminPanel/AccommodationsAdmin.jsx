@@ -53,7 +53,7 @@ const AccommodationsAdmin = () => {
           price,
           description,
         });
-        alert('Accommodation added successfully!');
+        // alert('Accommodation added successfully!');
       }
       setName('');
       // setLocation('');

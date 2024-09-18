@@ -23,6 +23,7 @@ function BookingPlatform() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
 
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -42,6 +43,7 @@ function BookingPlatform() {
         }
     };
 
+   
     const handleSubmit = (event) => {
         event.preventDefault();
         setError('');
@@ -89,7 +91,9 @@ function BookingPlatform() {
                 phoneNumber,
                 bookingAmount,
                 paymentDetails: details,
+                
                 bookedAt: new Date()
+               
             });
             console.log('Booking saved to Firestore.');
             setBookingId(bookingRef.id); 
@@ -106,7 +110,9 @@ function BookingPlatform() {
                     email,
                     phoneNumber,
                     bookingAmount,
+                    
                     id: bookingRef.id 
+                    
                 }
             });
         } catch (err) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { getUserProfile, updateUserProfile, getUserBookings, getUserFavorites } from './api';
+import { getUserProfile, updateUserProfile, getUserBookings, getUserFavorites } from './api';
 import { getAuth } from 'firebase/auth';
 
 function UserProfile() {
@@ -14,48 +14,44 @@ function UserProfile() {
 
     useEffect(() => {
         if (userId) {
-          console.log('Fetching data for user ID:', userId);
-          const fetchData = async () => {
-            try {
-              console.log('Fetching user profile...');
-              const userProfile = await getUserProfile(userId);
-              if (!userProfile) {
-                console.error('User profile not found');
-                
-              } else {
-                console.log('User profile:', userProfile);
-              }
-      
-              console.log('Fetching user bookings...');
-              const userBookings = await getUserBookings(userId);
-              if (userBookings.length === 0) {
-                console.error('No user bookings found');
-                
-              } else {
-                console.log('User bookings:', userBookings);
-              }
-      
-              console.log('Fetching user favorites...');
-              const userFavorites = await getUserFavorites(userId);
-              if (userFavorites.length === 0) {
-                console.error('No user favorites found');
-                
-              } else {
-                console.log('User favorites:', userFavorites);
-              }
-      
-              setProfile(userProfile || {});
-              setBookings(userBookings);
-              setFavorites(userFavorites);
-              setFormData(userProfile || {});
-            } catch (error) {
-              console.error('Error fetching data:', error);
-            }
-          };
-      
-          fetchData();
+            const fetchData = async () => {
+                try {
+                    console.log('Fetching user profile...');
+                    const userProfile = await getUserProfile(userId);
+                    if (!userProfile) {
+                        console.error('User profile not found');
+                    } else {
+                        console.log('User profile:', userProfile);
+                        setProfile(userProfile); 
+                    }
+    
+                    console.log('Fetching user bookings...');
+                    const userBookings = await getUserBookings(userId);
+                    if (userBookings.length === 0) {
+                        console.error('No user bookings found');
+                    } else {
+                        console.log('User bookings:', userBookings);
+                        setBookings(userBookings); 
+                    }
+    
+                    console.log('Fetching user favorites...');
+                    const userFavorites = await getUserFavorites(userId);
+                    if (userFavorites.length === 0) {
+                        console.error('No user favorites found');
+                    } else {
+                        console.log('User favorites:', userFavorites);
+                        setFavorites(userFavorites); 
+                    }
+    
+                    setFormData(userProfile || {}); 
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            };
+    
+            fetchData();
         }
-      }, [userId]);
+    }, [userId]);
 
     const handleEditClick = () => {
         setIsEditing(true);
