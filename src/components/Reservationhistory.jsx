@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Confirmation.css';
+import './Reservationhistory.css';
 
-function ConfirmationBooking () {
+function Reservationhistory () {
     const location = useLocation();
     const navigate = useNavigate();
     
@@ -11,15 +11,15 @@ function ConfirmationBooking () {
 
     const handleConfirm = () => {
         console.log("Booking confirmed!");
-        alert("Booking is confirmed!");
+        // alert("Booking is confirmed!");
         
        
-        // navigate('/');
+        navigate('/booking');
     };
 
     return (
         <div className="confirmation">
-            <h2>Booking Confirmation</h2>
+            <h2>Reservvation History</h2>
             <p><strong>Full Name: </strong> {FullName}</p>
             <p><strong>Check-in Date:</strong> {checkinDate}</p>
             <p><strong>Check-out Date:</strong> {checkoutDate}</p>
@@ -32,9 +32,9 @@ function ConfirmationBooking () {
 
             
 
-            <button onClick={handleConfirm}>Confirm Booking</button>
+            <button onClick={handleConfirm}>Enter</button>
         </div>
     );
 }
 
-export default ConfirmationBooking;
+export default Reservationhistory;

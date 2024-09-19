@@ -9,7 +9,7 @@ const TermsAndConditions = () => {
                 <h1>Terms and Conditions</h1>
             </header>
             <main className="terms-content">
-                <h2>Effective Date: [Date]</h2>
+                <h2>Effective Date: [19-09-2024]</h2>
                 <p>Welcome to [Paragon Hotel] (“we,” “our,” “us”). By accessing or using our app and services, you agree to comply with and be bound by the following terms and conditions (“Terms”). Please read them carefully.</p>
 
                 <h2>1. Acceptance of Terms</h2>

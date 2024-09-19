@@ -1,92 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../components/Firebase';
-import { collection, addDoc, updateDoc, deleteDoc, doc, getDocs } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchAccommodations, addAccommodation, updateAccommodation, deleteAccommodation } from '../Redux/accommodationsSlice';
 import './accommodations.css';
 
 const AccommodationsAdmin = () => {
+  const dispatch = useDispatch();
+  const accommodations = useSelector((state) => state.accommodations.list); // Access Redux state
+
   const [name, setName] = useState('');
-  // const [location, setLocation] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
-  const [accommodations, setAccommodations] = useState([]);
   const [editId, setEditId] = useState(null);
 
   useEffect(() => {
-    fetchAccommodations();
-  }, []);
-
-  const fetchAccommodations = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, 'accommodations'));
-      const fetchedAccommodations = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setAccommodations(fetchedAccommodations);
-    } catch (error) {
-      console.error('Error fetching accommodations: ', error);
-    }
-  };
+    dispatch(fetchAccommodations()); // Fetch accommodations from Firestore and update Redux store
+  }, [dispatch]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
-    const user = auth.currentUser;
+    const newAccommodation = { name, price, description };
 
-    if (!user) {
-      alert('User not authenticated');
-      return;
+    if (editId) {
+      dispatch(updateAccommodation({ id: editId, updatedData: newAccommodation }));
+    } else {
+      dispatch(addAccommodation(newAccommodation));
     }
 
-    try {
-      if (editId) {
-        const accommodationRef = doc(db, 'accommodations', editId);
-        await updateDoc(accommodationRef, {
-          name,
-         
-          price,
-          description,
-        });
-        alert('Accommodation updated successfully!');
-      } else {
-        await addDoc(collection(db, 'accommodations'), {
-          name,
-         
-          price,
-          description,
-        });
-        // alert('Accommodation added successfully!');
-      }
-      setName('');
-      
-      setPrice('');
-      setDescription('');
-      setEditId(null);
-      fetchAccommodations();
-    } catch (error) {
-      console.error('Error adding/updating accommodation: ', error);
-      alert('Failed to add/update accommodation.');
-    }
+    setName('');
+    setPrice('');
+    setDescription('');
+    setEditId(null);
   };
 
   const handleEdit = (id) => {
     const accommodation = accommodations.find(accom => accom.id === id);
     if (accommodation) {
       setName(accommodation.name);
-      
       setPrice(accommodation.price);
       setDescription(accommodation.description);
       setEditId(id);
     }
   };
 
-  const handleDelete = async (id) => {
-    try {
-      await deleteDoc(doc(db, 'accommodations', id));
-      alert('Accommodation deleted successfully!');
-      fetchAccommodations();
-    } catch (error) {
-      console.error('Error deleting accommodation: ', error);
-      alert('Failed to delete accommodation.');
-    }
+  const handleDelete = (id) => {
+    dispatch(deleteAccommodation(id));
   };
 
   return (
@@ -102,7 +59,6 @@ const AccommodationsAdmin = () => {
             required
           />
         </div>
-       
         <div>
           <label>Price:</label>
           <input
@@ -121,7 +77,7 @@ const AccommodationsAdmin = () => {
             required
           ></textarea>
         </div>
-        
+
         <button className='add-accommodation-btn' type="submit">
           {editId ? 'Update Accommodation' : 'Add Accommodation'}
         </button>
@@ -133,8 +89,8 @@ const AccommodationsAdmin = () => {
             <h4>{accommodation.name}</h4>
             <p>R{accommodation.price}</p>
             <p>{accommodation.description}</p>
-            <button className='edit-button'onClick={() => handleEdit(accommodation.id)}>Edit</button>
-            <button className='delete-button'onClick={() => handleDelete(accommodation.id)}>Delete</button>
+            <button className='edit-button' onClick={() => handleEdit(accommodation.id)}>Edit</button>
+            <button className='delete-button' onClick={() => handleDelete(accommodation.id)}>Delete</button>
           </li>
         ))}
       </ul>

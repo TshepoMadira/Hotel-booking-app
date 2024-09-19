@@ -1,30 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { collection, getDocs, doc, updateDoc } from 'firebase/firestore';
-import { db } from '../components/Firebase';
-
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReservations, approveReservation, rejectReservation } from '../Redux/reservationActions';
 import './AdminReservations.css';
 
 const AdminReservations = () => {
-  const [reservations, setReservations] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedStatus, setSelectedStatus] = useState('');
-  const [roomAvailability, setRoomAvailability] = useState({}); 
+  const dispatch = useDispatch();
+  const reservations = useSelector((state) => state.reservations.list) || [];
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [selectedStatus, setSelectedStatus] = React.useState('');
+  const [roomAvailability, setRoomAvailability] = React.useState({});
 
   useEffect(() => {
-    const fetchReservations = async () => {
-      try {
-        const bookingsCol = collection(db, 'bookings');
-        const bookingSnapshot = await getDocs(bookingsCol);
-        const bookingList = bookingSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        console.log("Fetched bookings: ", bookingList); 
-        setReservations(bookingList);
-      } catch (error) {
-        console.error("Error fetching bookings: ", error);
-      }
-    };
-
-    fetchReservations();
-  }, []);
+    dispatch(fetchReservations());
+  }, [dispatch]);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -35,7 +23,7 @@ const AdminReservations = () => {
   };
 
   const filteredReservations = reservations.filter(reservation => {
-    if (!reservation) return false; 
+    if (!reservation) return false; // Skip undefined reservations
   
     const searchLower = searchQuery.toLowerCase();
     return (
@@ -46,28 +34,15 @@ const AdminReservations = () => {
     );
   });
 
-  const handleApprove = async (id) => {
-    try {
-      const reservationDoc = doc(db, 'bookings', id); 
-      await updateDoc(reservationDoc, { status: 'approved' });
-      setReservations(reservations.map(res => res.id === id ? { ...res, status: 'approved' } : res));
-      
-      
-      const roomType = reservations.find(res => res.id === id).roomType;
-      setRoomAvailability(prevState => ({ ...prevState, [roomType]: 'not available' }));
-    } catch (error) {
-      console.error("Error updating booking to approved: ", error);
+  const handleApprove = (id) => {
+    const roomType = reservations.find(res => res.id === id)?.roomType;
+    if (roomType) {
+      dispatch(approveReservation(id, roomType));
     }
   };
 
-  const handleReject = async (id) => {
-    try {
-      const reservationDoc = doc(db, 'bookings', id); 
-      await updateDoc(reservationDoc, { status: 'rejected' });
-      setReservations(reservations.map(res => res.id === id ? { ...res, status: 'rejected' } : res));
-    } catch (error) {
-      console.error("Error updating booking to rejected: ", error);
-    }
+  const handleReject = (id) => {
+    dispatch(rejectReservation(id));
   };
 
   return (
@@ -90,13 +65,10 @@ const AdminReservations = () => {
           <li key={res.id}>
             <h4>{res.accommodationName}</h4>
             <p>FullName: {res.fullName}</p>
-            {/* <p>User: {res.id}</p> */}
             <p>Check-in: {res.checkinDate}</p>
             <p>Check-out: {res.checkoutDate}</p>
-            {/* <p>Guests: {res.numberOfGuests}</p> */}
             <p>RoomType: {res.roomType}</p>
             <p>Status: {res.status}</p>
-            {/* <p>Review: {res.review}</p> */}
             <p>Email: {res.email}</p>
             <p>Room Availability: {roomAvailability[res.roomType] === 'not available' ? 'Not Available' : 'Available'}</p>
             <button className='approve-btn' onClick={() => handleApprove(res.id)}>Approve</button>

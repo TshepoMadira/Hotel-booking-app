@@ -98,7 +98,7 @@ function BookingPlatform() {
             console.log('Booking saved to Firestore.');
             setBookingId(bookingRef.id); 
 
-            navigate('/confirmation', {
+            navigate('/reservationhistory', {
                 state: {
                     checkinDate,
                     checkoutDate,
