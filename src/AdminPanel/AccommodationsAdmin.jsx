@@ -5,7 +5,7 @@ import './accommodations.css';
 
 const AccommodationsAdmin = () => {
   const dispatch = useDispatch();
-  const accommodations = useSelector((state) => state.accommodations.list); // Access Redux state
+  const accommodations = useSelector((state) => state.accommodations.list); 
 
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
@@ -13,7 +13,7 @@ const AccommodationsAdmin = () => {
   const [editId, setEditId] = useState(null);
 
   useEffect(() => {
-    dispatch(fetchAccommodations()); // Fetch accommodations from Firestore and update Redux store
+    dispatch(fetchAccommodations()); 
   }, [dispatch]);
 
   const handleSubmit = async (e) => {

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { db } from '../components/Firebase';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 
-// Async actions using Thunk
+
 export const fetchAccommodations = createAsyncThunk('accommodations/fetch', async () => {
   const querySnapshot = await getDocs(collection(db, 'accommodations'));
   return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));

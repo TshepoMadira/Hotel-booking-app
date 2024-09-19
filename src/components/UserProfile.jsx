@@ -98,6 +98,7 @@ function UserProfile() {
                                 name="email"
                                 value={formData.email || ''}
                                 onChange={handleChange}
+                                readOnly
                             />
                         </label>
                         <button onClick={handleSaveClick}>Save</button>

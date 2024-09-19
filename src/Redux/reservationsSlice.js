@@ -2,30 +2,30 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { db } from '../components/Firebase';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 
-// Async actions using Thunk
-export const fetchReservations = createAsyncThunk('reservations/fetch', async () => {
-  const querySnapshot = await getDocs(collection(db, 'reservations'));
+
+export const fetchReservations = createAsyncThunk('bookings/fetch', async () => {
+  const querySnapshot = await getDocs(collection(db, 'bookings'));
   return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 });
 
-export const addReservation = createAsyncThunk('reservations/add', async (newReservation) => {
-  await addDoc(collection(db, 'reservations'), newReservation);
+export const addReservation = createAsyncThunk('bookings/add', async (newReservation) => {
+  await addDoc(collection(db, 'bookings'), newReservation);
   return newReservation;
 });
 
-export const updateReservation = createAsyncThunk('reservations/update', async ({ id, updatedData }) => {
-  const reservationRef = doc(db, 'reservations', id);
+export const updateReservation = createAsyncThunk('bookings/update', async ({ id, updatedData }) => {
+  const reservationRef = doc(db, 'bookings', id);
   await updateDoc(reservationRef, updatedData);
   return { id, updatedData };
 });
 
-export const deleteReservation = createAsyncThunk('reservations/delete', async (id) => {
-  await deleteDoc(doc(db, 'reservations', id));
+export const deleteReservation = createAsyncThunk('bookings/delete', async (id) => {
+  await deleteDoc(doc(db, 'bookings', id));
   return id;
 });
 
 const reservationsSlice = createSlice({
-  name: 'reservations',
+  name: 'bookings',
   initialState: {
     list: [],
     status: null,

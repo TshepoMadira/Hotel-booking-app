@@ -1,12 +1,12 @@
 import { collection, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../components/Firebase';
 
-// Action Types
+
 export const FETCH_RESERVATIONS = 'FETCH_RESERVATIONS';
 export const APPROVE_RESERVATION = 'APPROVE_RESERVATION';
 export const REJECT_RESERVATION = 'REJECT_RESERVATION';
 
-// Fetch Reservations
+
 export const fetchReservations = () => async (dispatch) => {
   try {
     const bookingsCol = collection(db, 'bookings');
@@ -16,7 +16,7 @@ export const fetchReservations = () => async (dispatch) => {
       return {
         id: doc.id,
         ...data,
-        bookedAt: data.bookedAt?.toDate().toISOString(), // Convert timestamp to string
+        bookedAt: data.bookedAt?.toDate().toISOString(), 
       };
     });
 
@@ -26,7 +26,7 @@ export const fetchReservations = () => async (dispatch) => {
   }
 };
 
-// Approve Reservation
+
 export const approveReservation = (id, roomType) => async (dispatch) => {
   try {
     const reservationDoc = doc(db, 'bookings', id);
@@ -38,7 +38,6 @@ export const approveReservation = (id, roomType) => async (dispatch) => {
   }
 };
 
-// Reject Reservation
 export const rejectReservation = (id) => async (dispatch) => {
   try {
     const reservationDoc = doc(db, 'bookings', id);

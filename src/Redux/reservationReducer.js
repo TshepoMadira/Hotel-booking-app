@@ -10,7 +10,7 @@ import {
   };
   
   const reservationReducer = (state = initialState, action) => {
-    console.log('Reducer received action:', action); // Add this line
+    console.log('Reducer received action:', action); 
   
     switch (action.type) {
       case FETCH_RESERVATIONS:

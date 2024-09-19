@@ -23,7 +23,7 @@ const AdminReservations = () => {
   };
 
   const filteredReservations = reservations.filter(reservation => {
-    if (!reservation) return false; // Skip undefined reservations
+    if (!reservation) return false;
   
     const searchLower = searchQuery.toLowerCase();
     return (
