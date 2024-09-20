@@ -1,21 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
-import { Link } from 'react-router-dom'; 
-
 
 const Navbar = () => {
   const { menuItems } = useSelector((state) => state.navigation);
 
-  
-  const handleBookClick = () => {
-    // window.location.href = '/book';
+  const handleLogout = () => {
+   
+    localStorage.removeItem('user');
+    window.location.href = '/'; 
   };
 
   return (
     <nav className="navbar">
       <div className="logo">Paragon Hotel</div>
-      {/* <p >Model of excellence and perfection</p> */}
       
       <ul className="nav-links">
         {menuItems.map((item, index) => (
@@ -24,9 +23,12 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <Link to='/signup'>
-      <button className="book-btn" onClick={handleBookClick}>Book</button>
+      
+      <Link to='/accommodations'>
+        <button className="sign-btn">Admin</button>
       </Link>
+
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
     </nav>
   );
 };

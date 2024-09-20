@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import { fetchAccommodations, addAccommodation, updateAccommodation, deleteAccommodation } from '../Redux/accommodationsSlice';
 import './accommodations.css';
 
 const AccommodationsAdmin = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize the navigate hook
   const accommodations = useSelector((state) => state.accommodations.list); 
 
   const [name, setName] = useState('');
@@ -46,8 +48,19 @@ const AccommodationsAdmin = () => {
     dispatch(deleteAccommodation(id));
   };
 
+  const handleNavigateToReservations = () => {
+    navigate('/reservations'); // Navigate to the reservations page
+  };
+
   return (
     <div className='Container'>
+      <button 
+        className='navigate-button' 
+        onClick={handleNavigateToReservations}
+        title='Go to Reservations'
+      >
+        ➔
+      </button>
       <h2>{editId ? 'Edit Accommodation' : 'Add Accommodation'}</h2>
       <form onSubmit={handleSubmit}>
         <div>

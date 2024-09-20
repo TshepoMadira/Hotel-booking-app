@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getUserProfile, updateUserProfile, getUserBookings, getUserFavorites } from './api';
 import { getAuth } from 'firebase/auth';
+import './Userprofile.css';
 
 function UserProfile() {
     const [profile, setProfile] = useState({});

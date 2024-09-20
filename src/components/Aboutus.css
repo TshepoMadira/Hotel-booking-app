@@ -1,0 +1,54 @@
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back-home-link {
+    text-decoration: none;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .back-home-link:hover {
+    color: #0056b3;
+  }
+  
+  .back-arrow-icon {
+    margin-right: 8px;
+  }
+  
+  .about-us-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .about-us-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .map-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .address-text {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+  }
+  

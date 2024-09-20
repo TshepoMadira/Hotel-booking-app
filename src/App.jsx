@@ -23,18 +23,23 @@ import UserProfile from './components/UserProfile';
 import SearchResults from './components/SearchResults'; 
 
 
+
 function App() {
   return (
     <Router>
+      
       <Routes>
+      
+       
         <Route path="/" element={<HomePage />} />
+        
         <Route path="/signup" element={<SignUpPage />} />
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path='login' element={<LoginPage />} />
         <Route path="termsandconditions" element={<TermsAndConditions />} />
-        <Route path="offers" element={<Offers />} />
+        {/* <Route path="offers" element={<Offers />} /> */}
         <Route path="/king-suite-details" element={<KingSuitesDetails />} />
         <Route path="/queen-suite-details" element={<QueenSuiteDetails />} />
         <Route path="guest-room-details" element={<GuestRoomDetails />} />
@@ -46,6 +51,7 @@ function App() {
         <Route path='paypal' element={<PayPalButton />} />
         <Route path='userprofile' element={<UserProfile />} />
         <Route path='/search' element={<SearchResults />} />
+        
 
 
 
