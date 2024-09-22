@@ -13,9 +13,9 @@ function Reservationhistory() {
     navigate('/booking');
   };
 
-  // New function to handle navigation to the user profile
+  
   const handleGoToProfile = () => {
-    navigate('/userprofile'); // Navigate to the user profile page
+    navigate('/userprofile'); 
   };
 
   return (
@@ -32,7 +32,7 @@ function Reservationhistory() {
       {/* <p><strong>Reviews: </strong> {Review}</p> */}
 
       <button onClick={handleConfirm}>Enter</button>
-      {/* New button to navigate to the user profile */}
+     
       <button onClick={handleGoToProfile}>Go to Profile</button>
     </div>
   );

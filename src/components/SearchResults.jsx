@@ -19,12 +19,14 @@ const SearchResults = () => {
       }
 
       try {
-        const q = query(
-          collection(db, 'rooms'),
-          where('name', '>=', queryParam), 
-          where('name', '<=', queryParam + '\uf8ff') 
+        
+        const accommodationsQuery = query(
+          collection(db, 'accommodations'), 
+          where('name', '>=', queryParam),
+          where('name', '<=', queryParam + '\uf8ff')
         );
-        const querySnapshot = await getDocs(q);
+
+        const querySnapshot = await getDocs(accommodationsQuery);
         const fetchedResults = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setResults(fetchedResults);
       } catch (error) {
@@ -51,8 +53,8 @@ const SearchResults = () => {
           {results.map((result) => (
             <li key={result.id}>
               <h2>{result.name}</h2>
-              <p>{result.location}</p>
-              <p>Price: ${result.price}</p>
+              <p>Location: {result.location || 'Not specified'}</p>
+              <p>Price: R{result.price}</p>
               <p>{result.description}</p>
             </li>
           ))}
