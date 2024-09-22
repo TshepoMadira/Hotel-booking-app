@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'; 
 import { fetchAccommodations, addAccommodation, updateAccommodation, deleteAccommodation } from '../Redux/accommodationsSlice';
-import './accommodations.css';
+import '../Styles/accommodations.css';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const AccommodationsAdmin = () => {
@@ -46,7 +46,7 @@ const AccommodationsAdmin = () => {
     setImage(null);
     setEditId(null);
     
-    // Reset file input
+
     const fileInput = document.getElementById('image-input');
     if (fileInput) {
       fileInput.value = null;
@@ -60,7 +60,7 @@ const AccommodationsAdmin = () => {
       setPrice(accommodation.price);
       setDescription(accommodation.description);
       setEditId(id);
-      // Note: Handling image editing can be implemented here if needed
+      
     }
   };
 
@@ -90,6 +90,7 @@ const AccommodationsAdmin = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            className='Namee'
           />
         </div>
         <div>
@@ -108,6 +109,7 @@ const AccommodationsAdmin = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
+            className='Description'
           ></textarea>
         </div>
         <div>
@@ -117,6 +119,7 @@ const AccommodationsAdmin = () => {
             accept="image/*"
             onChange={handleImageChange}
             id="image-input"
+            className='Label-image'
           />
         </div>
         <button className='add-accommodation-btn' type="submit">
@@ -137,8 +140,8 @@ const AccommodationsAdmin = () => {
             )}
             <p>R{accommodation.price}</p>
             <p>{accommodation.description}</p>
-            <button className='edit-button' onClick={() => handleEdit(accommodation.id)}>Edit</button>
-            <button className='delete-button' onClick={() => handleDelete(accommodation.id)}>Delete</button>
+            <button className='edit-btn' onClick={() => handleEdit(accommodation.id)}>Edit</button>
+            <button className='delete-btn' onClick={() => handleDelete(accommodation.id)}>Delete</button>
           </li>
         ))}
       </ul>

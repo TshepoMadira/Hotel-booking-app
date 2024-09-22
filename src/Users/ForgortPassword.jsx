@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { auth } from './Firebase';
+import { auth } from '../components/Firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import './ForgortPassword.css';
+import '../Styles/ForgortPassword.css';
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');

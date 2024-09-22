@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { db } from './Firebase'; 
+import { db } from '../components/Firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
-import './Reviewrating.css'; 
+import '../Styles/Reviewrating.css'; 
 
 const ReviewRating = ({ bookingDetails, onReviewSubmitted }) => {
     const [rating, setRating] = useState(1);
@@ -39,7 +39,7 @@ const ReviewRating = ({ bookingDetails, onReviewSubmitted }) => {
     };
 
     return (
-        <div className="review-rating">
+        <div className="review-rating-container">
             <h3>Leave a Review</h3>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -56,7 +56,7 @@ const ReviewRating = ({ bookingDetails, onReviewSubmitted }) => {
                 </label>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {success && <p style={{ color: 'green' }}>{success}</p>}
-                <button type="submit">Submit Review</button>
+                <button className='submit-review'type="submit-review">Submit Review</button>
             </form>
         </div>
     );

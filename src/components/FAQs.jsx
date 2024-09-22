@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
-import { FaArrowLeft } from 'react-icons/fa'; // Import an arrow icon from react-icons
-import './FAQs.css';
+import { Link } from 'react-router-dom'; 
+import { FaArrowLeft } from 'react-icons/fa';
+import '../Styles/FAQs.css';
 
 const FAQs = () => {
   return (

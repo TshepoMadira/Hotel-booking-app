@@ -1,3 +1,4 @@
+
 .booking-platform {
   background-color: #f9f9f938;
   padding: 20px;
@@ -28,28 +29,53 @@
   margin-bottom: 15px;
 }
 
+
 .room-type-selection {
   display: flex;
   flex-wrap: wrap;
 }
 
 .room-box {
-  background-color: #fff;
+  background-color: black;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 15px;
   margin: 10px;
-  flex: 1 1 calc(33% - 20px); 
+  flex: 1 1 calc(33% - 20px);
   cursor: pointer;
-  transition: border-color 0.2s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.room-box:hover {
+  transform: scale(1.02); 
 }
 
 .room-box.selected {
   border-color: #0e4569;
+  transform: scale(1.05); 
+  box-shadow: 0 0 15px rgba(14, 69, 105, 0.5); 
+  animation: pulse 0.4s ease-in-out;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(14, 69, 105, 0.5);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(14, 69, 105, 0.7);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(14, 69, 105, 0.5);
+  }
 }
 
 .submit-btn {
-  background-color: #af960c; 
+  background-color: #af960c;
+  width: 200px;
   color: #fff;
   padding: 10px;
   border: none;
@@ -59,7 +85,7 @@
 }
 
 .submit-btn:hover {
-  background-color: #1a5276;
+  background-color: #695b08;
 }
 
 .payment-section {

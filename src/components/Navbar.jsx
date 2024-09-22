@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import '../Styles/Navbar.css';
 
 const Navbar = () => {
   const { menuItems } = useSelector((state) => state.navigation);
@@ -25,7 +25,7 @@ const Navbar = () => {
       </ul>
       
       <Link to='/accommodations'>
-        <button className="sign-btn">Admin</button>
+        <button className="admin-btn">Admin</button>
       </Link>
 
       <button className="logout-btn" onClick={handleLogout}>Logout</button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import './Login.css';
+import '../Styles/Login.css';
 
 const LoginPage = () => {
   const [form, setForm] = useState({
@@ -60,7 +60,7 @@ const LoginPage = () => {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button className='login-btn'type="submit">Login</button>
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
 

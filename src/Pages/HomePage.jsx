@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
-import Navbar from './Navbar';
-import './HomePage.css';
+import Navbar from '../components/Navbar';
+import '../Styles/HomePage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const HomePage = () => {
@@ -130,53 +130,6 @@ const HomePage = () => {
           </Link>
         </div>
 
-        {/* <div className="review-section">
-          <h2>Leave a Review</h2>
-          <form onSubmit={handleReviewSubmit}>
-            <label>
-              Name:
-              <input 
-                type="text" 
-                value={newReview.name} 
-                onChange={(e) => setNewReview({ ...newReview, name: e.target.value })} 
-              />
-            </label>
-            <label>
-              Rating (1-5):
-              <input 
-                type="number" 
-                min="1" 
-                max="5" 
-                value={newReview.rating} 
-                onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })} 
-              />
-            </label>
-            <label>
-              Comment:
-              <textarea 
-                value={newReview.comment} 
-                onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-              />
-            </label>
-            <button type="submit">Submit Review</button>
-          </form>
-        </div>
-
-       
-        <div className="reviews-display">
-          <h2>Guest Reviews</h2>
-          {reviews.length > 0 ? (
-            reviews.map((review, index) => (
-              <div key={index} className="review">
-                <h4>{review.name}</h4>
-                <p>Rating: {review.rating}/5</p>
-                <p>{review.comment}</p>
-              </div>
-            ))
-          ) : (
-            <p>No reviews yet. Be the first to leave a review!</p>
-          )}
-        </div> */}
 
         <footer className="footer">
           <div className="footer-content">
@@ -198,6 +151,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="social-media-links">
+            <div className="social-media-line"></div>
               <a href="https://twitter.com/YourHotelHandle" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-twitter"></i>
               </a>

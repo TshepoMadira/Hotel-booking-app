@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './QueenSuiteDetails.css';
+import '../Styles/QueenSuiteDetails.css';
 
 const QueenSuiteDetails = () => {
   return (

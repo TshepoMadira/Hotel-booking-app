@@ -1,0 +1,58 @@
+.Signup-Container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup {
+  text-align: center;
+  color: #333;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit-btnn"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #af960c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit-btnn"]:hover {
+  background-color: #6e5f09;
+}
+
+.forgot-password-link {
+  display: block;
+  text-align: center;
+  color: #af960c;
+  text-decoration: none;
+}
+
+/* .forgot-password-link:hover {
+  text-decoration: underline;
+} */

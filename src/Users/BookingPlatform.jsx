@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PayPalButton from './PayPalButton'; 
-import { db } from './Firebase'; 
+import { db } from '../components/Firebase'; 
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import ReviewRating from './ReviewRating'; 
-import './Booking.css';
+import '../Styles/Booking.css';
 
 function BookingPlatform() {
     const [checkinDate, setCheckinDate] = useState('');

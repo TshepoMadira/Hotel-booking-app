@@ -2,9 +2,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Offers from './components/Offers';
-import SignUpPage from './components/SignUpPage'; 
-import LoginPage from './components/LoginPage';
-import HomePage from './components/HomePage'; 
+import SignUpPage from './Authentication/SignUpPage'; 
+import LoginPage from './Authentication/LoginPage';
+import HomePage from './Pages/HomePage'; 
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import TermsAndConditions from './components/TermsAndConditions';
@@ -12,14 +12,14 @@ import FAQs from './components/FAQs';
 import KingSuitesDetails from './components/KingSuitesDetails';
 import QueenSuiteDetails from './components/QueenSuiteDetails';
 import GuestRoomDetails from './components/GuestRoomDetails';
-import ForgotPassword from './components/ForgortPassword';
+import ForgotPassword from './Users/ForgortPassword';
 import Accommodations from './AdminPanel/AccommodationsAdmin';
 import Reservations from './AdminPanel/Reservations';
-import BookingForm from './components/BookingPlatform';
-import Reservationhistory from './components/Reservationhistory';
-import PayPalButton from './components/PayPalButton';
+import BookingForm from './Users/BookingPlatform';
+import Reservationhistory from './Users/Reservationhistory';
+import PayPalButton from './Users/PayPalButton';
 import './App.css';
-import UserProfile from './components/UserProfile';
+import UserProfile from './Users/UserProfile';
 import SearchResults from './components/SearchResults'; 
 
 

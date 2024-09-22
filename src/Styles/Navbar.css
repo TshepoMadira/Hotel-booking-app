@@ -1,11 +1,11 @@
 
-.navbar {
+ .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #f2f2f2; 
-  }
+  } 
   
   .logo {
     font-size: 1.5rem;
@@ -22,6 +22,7 @@
   .nav-links {
     display: flex;
     list-style: none;
+   
   }
   
   .nav-links li {
@@ -34,7 +35,7 @@
     font-weight: 700;
   }
   
-  .sign-btn {
+  .admin-btn {
     background-color: #000;
     color: #fff;
     padding: 10px 20px;
@@ -55,4 +56,4 @@
 
   }
  
-  
+    

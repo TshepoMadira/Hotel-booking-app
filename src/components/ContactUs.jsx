@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import styles from './ContactUs.module.css';
+import styles from '../Styles/ContactUs.module.css';
 
 const ContactUs = () => {
   return (

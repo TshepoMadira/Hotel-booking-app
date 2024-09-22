@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchReservations,approveReservation,rejectReservation,} from '../Redux/reservationsSlice'; // Updated import path
-import './AdminReservations.css';
+import '../Styles/AdminReservations.css';
 
 const AdminReservations = () => {
   const dispatch = useDispatch();

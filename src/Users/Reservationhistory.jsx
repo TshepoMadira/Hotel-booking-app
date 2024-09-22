@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Reservationhistory.css';
+import '../Styles/Reservationhistory.css';
 
 function Reservationhistory() {
   const location = useLocation();
@@ -31,9 +31,9 @@ function Reservationhistory() {
       <p><strong>Total Amount:</strong> R{bookingAmount}</p>
       {/* <p><strong>Reviews: </strong> {Review}</p> */}
 
-      <button onClick={handleConfirm}>Enter</button>
+      <button className='enter-btn' onClick={handleConfirm}>Enter</button>
      
-      <button onClick={handleGoToProfile}>Go to Profile</button>
+      <button className='gotoprofile-css'onClick={handleGoToProfile}>Go to Profile</button>
     </div>
   );
 }

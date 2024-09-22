@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { auth, db } from './Firebase'; 
+import { auth, db } from '../components/Firebase'; 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import './signup.css';
+import '../Styles/signup.css';
 
 const SignUpPage = () => {
   const [form, setForm] = useState({
@@ -87,7 +87,7 @@ const SignUpPage = () => {
       <h1 className='signup'>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label className="firstName">First Name:</label>
+          <label className="firstNamee">First Name:</label>
           <input
             type="text"
             id="firstName"
@@ -98,7 +98,7 @@ const SignUpPage = () => {
           />
         </div>
         <div>
-          <label className="lastName">Last Name:</label>
+          <label className="lastNamee">Last Name:</label>
           <input
             type="text"
             id="lastName"
@@ -109,7 +109,7 @@ const SignUpPage = () => {
           />
         </div>
         <div>
-          <label className="email">Email:</label>
+          <label className="emaill">Email:</label>
           <input
             type="email"
             id="email"
@@ -120,7 +120,7 @@ const SignUpPage = () => {
           />
         </div>
         <div>
-          <label className="confirmEmail">Confirm Email:</label>
+          <label className="confirmEmaill">Confirm Email:</label>
           <input
             type="email"
             id="confirmEmail"
@@ -131,7 +131,7 @@ const SignUpPage = () => {
           />
         </div>
         <div>
-          <label className="password">Password:</label>
+          <label className="passssword">Password:</label>
           <input
             type="password"
             id="password"
@@ -142,11 +142,11 @@ const SignUpPage = () => {
           />
           {passwordStrength && <p style={{ color: passwordStrength === 'Strong password' ? 'green' : 'red' }}>{passwordStrength}</p>}
         </div>
-        <button type="submit">Register</button>
+        <button type="submit-btnn">Enter</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
       <div style={{ marginTop: '10px' }}>
-        <a className='forgot-link'href="/forgot-password">Forgot Password?</a>
+        <a className='forgot-password-link'href="/forgot-password">Forgot Password?</a>
       </div>
     </div>
   );
