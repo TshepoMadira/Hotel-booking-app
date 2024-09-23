@@ -12,7 +12,7 @@
   .queen-suite-description {
     font-size: 16px;
     line-height: 1.5;
-    color: white;
+    color: black;
   }
   
   .queen-suite-price {
@@ -39,11 +39,11 @@
   }
 
   .lounge-description{
-    color: white;
+    color: black;
   }
 
  .heading{
-  color: white;
+  color: black;
   
  }
 

@@ -6,6 +6,7 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
 }
 
 .userprofile {
@@ -86,3 +87,12 @@
 .favorite-accommodations li:hover {
     background-color: #f1f1f1;
 }
+
+.logout-button{
+    border: none;
+    background-color: #af960c;
+}
+
+
+
+

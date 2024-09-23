@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getUserProfile, updateUserProfile, getUserBookings, getUserFavorites } from '../components/api';
 import { getAuth } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; 
 import '../Styles/Userprofile.css';
-
 
 function UserProfile() {
     const [profile, setProfile] = useState({});
@@ -10,9 +10,10 @@ function UserProfile() {
     const [favorites, setFavorites] = useState([]);
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({});
-
+    
     const auth = getAuth();
     const userId = auth.currentUser?.uid;
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         if (userId) {
@@ -78,6 +79,15 @@ function UserProfile() {
         });
     };
 
+    const handleLogout = async () => {
+        try {
+            await auth.signOut();
+            navigate('/'); 
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
+    };
+
     return (
         <div className="user-profile">
             <h1 className='userprofile'>User Profile</h1>
@@ -128,11 +138,12 @@ function UserProfile() {
                 <ul>
                     {favorites.map((accommodation, index) => (
                         <li key={index}>
-                            {accommodation.name} - {accommodation.location}
+                            {accommodation.name} 
                         </li>
                     ))}
                 </ul>
             </div>
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
         </div>
     );
 }

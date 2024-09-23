@@ -22,7 +22,7 @@ function BookingPlatform() {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-
+    const [favorites, setFavorites] = useState([]); // State for favorites
 
     const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ function BookingPlatform() {
 
     const fetchAccommodations = async () => {
         try {
-            const querySnapshot = await getDocs(collection(db, 'accommodations'));
+            const querySnapshot = await getDocs(collection(db, 'accommodation'));
             const fetchedAccommodations = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setAccommodations(fetchedAccommodations);
             setLoading(false);
@@ -43,7 +43,6 @@ function BookingPlatform() {
         }
     };
 
-   
     const handleSubmit = (event) => {
         event.preventDefault();
         setError('');
@@ -91,9 +90,7 @@ function BookingPlatform() {
                 phoneNumber,
                 bookingAmount,
                 paymentDetails: details,
-                
                 bookedAt: new Date()
-               
             });
             console.log('Booking saved to Firestore.');
             setBookingId(bookingRef.id); 
@@ -110,9 +107,7 @@ function BookingPlatform() {
                     email,
                     phoneNumber,
                     bookingAmount,
-                    
                     id: bookingRef.id 
-                    
                 }
             });
         } catch (err) {
@@ -121,8 +116,14 @@ function BookingPlatform() {
         }
     };
 
-    const handleReviewSubmitted = () => {
-       
+    const toggleFavorite = (roomId) => {
+        setFavorites(prevFavorites => {
+            if (prevFavorites.includes(roomId)) {
+                return prevFavorites.filter(id => id !== roomId); // Remove from favorites
+            } else {
+                return [...prevFavorites, roomId]; // Add to favorites
+            }
+        });
     };
 
     if (loading) {
@@ -188,9 +189,20 @@ function BookingPlatform() {
                                     className={`room-box ${room.id === roomType ? 'selected' : ''}`}
                                     onClick={() => setRoomType(room.id)}
                                 >
+                                    <img src={room.image} alt={room.name}/>
                                     <h3>{room.name}</h3>
                                     <p>Price: R{room.price} per room</p>
+                                    <p>Available: {room.available}</p>
                                     <p>{room.description}</p>
+                                    <button 
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            toggleFavorite(room.id);
+                                        }}
+                                    >
+                                        {favorites.includes(room.id) ? '♥' : '♡'}
+                                    </button>
                                 </div>
                             ))}
                         </div>
@@ -231,9 +243,19 @@ function BookingPlatform() {
                 <div className="payment-section">
                     <h3>Total Amount: ${bookingAmount}</h3>
                     <PayPalButton amount={bookingAmount} onSuccess={handlePaymentSuccess} />
-                    <ReviewRating bookingDetails={{ id: bookingId, roomType: accommodations.find(room => room.id === roomType)?.name || roomType }} onReviewSubmitted={handleReviewSubmitted} />
+                    <ReviewRating bookingDetails={{ id: bookingId, roomType: accommodations.find(room => room.id === roomType)?.name || roomType }} onReviewSubmitted={() => {}} />
                 </div>
             )}
+            <h2>Your Favorite Accommodations</h2>
+            <div className="favorite-accommodations">
+                {accommodations.filter(room => favorites.includes(room.id)).map(room => (
+                    <div key={room.id} className="room-box">
+                        <h3>{room.name}</h3>
+                        <p>Price: R{room.price} per room</p>
+                        <p>{room.description}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

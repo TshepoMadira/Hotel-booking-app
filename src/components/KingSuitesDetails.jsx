@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import '../Styles/KingSuiteDetails.css';
+import './KingSuite.css';
 
 const KingSuiteDetails = () => {
   return (

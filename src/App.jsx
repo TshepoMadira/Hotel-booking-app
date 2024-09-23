@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Offers from './components/Offers';
+
+// import Offers from './components/Offers';
 import SignUpPage from './Authentication/SignUpPage'; 
 import LoginPage from './Authentication/LoginPage';
 import HomePage from './Pages/HomePage'; 
@@ -27,6 +28,7 @@ import SearchResults from './components/SearchResults';
 function App() {
   return (
     <Router>
+     
       
       <Routes>
       
