@@ -22,7 +22,7 @@ function BookingPlatform() {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [favorites, setFavorites] = useState([]); // State for favorites
+    const [favorites, setFavorites] = useState([]); 
 
     const navigate = useNavigate();
 
@@ -119,9 +119,9 @@ function BookingPlatform() {
     const toggleFavorite = (roomId) => {
         setFavorites(prevFavorites => {
             if (prevFavorites.includes(roomId)) {
-                return prevFavorites.filter(id => id !== roomId); // Remove from favorites
+                return prevFavorites.filter(id => id !== roomId); 
             } else {
-                return [...prevFavorites, roomId]; // Add to favorites
+                return [...prevFavorites, roomId]; 
             }
         });
     };

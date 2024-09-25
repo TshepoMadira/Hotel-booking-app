@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {fetchReservations,approveReservation,rejectReservation,} from '../Redux/reservationsSlice'; // Updated import path
+import {fetchReservations,approveReservation,rejectReservation,} from '../Redux/reservationsSlice'; 
 import '../Styles/AdminReservations.css';
 
 const AdminReservations = () => {

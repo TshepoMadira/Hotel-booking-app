@@ -24,11 +24,11 @@ const Navbar = () => {
         ))}
       </ul>
       
-      <Link to='/accommodations'>
+      <Link to='/reservations'>
         <button className="admin-btn">Admin</button>
       </Link>
 
-      <button className="logout-btn" onClick={handleLogout}>Logout</button>
+      {/* <button className="logout-btn" onClick={handleLogout}>Logout</button> */}
     </nav>
   );
 };
