@@ -11,8 +11,9 @@ To set up the hotel App follow this:
 # Installation
 1. git clone https://github.com/TshepoMadira/Hotel-booking-app.git
 2. cd Hotel-booking-app
-3. npm install
-4. npm run dev
+3. navigate to dev branch using this  command "git checkout dev"
+4. npm install
+5. npm run dev
 
 
 Project Overview
