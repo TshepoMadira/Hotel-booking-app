@@ -32,7 +32,7 @@ function BookingPlatform() {
 
     const fetchAccommodations = async () => {
         try {
-            const querySnapshot = await getDocs(collection(db, 'accommodation'));
+            const querySnapshot = await getDocs(collection(db, 'accommodations'));
             const fetchedAccommodations = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setAccommodations(fetchedAccommodations);
             setLoading(false);
@@ -189,7 +189,7 @@ function BookingPlatform() {
                                     className={`room-box ${room.id === roomType ? 'selected' : ''}`}
                                     onClick={() => setRoomType(room.id)}
                                 >
-                                    <img src={room.image} alt={room.name}/>
+                                    <img src={room.main_image} alt={room.name}/>
                                     <h3>{room.name}</h3>
                                     <p>Price: R{room.price} per room</p>
                                     <p>Available: {room.available}</p>

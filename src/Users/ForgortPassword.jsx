@@ -23,6 +23,8 @@ const ForgotPasswordPage = () => {
       setError('');
       setTimeout(() => navigate('/login'), 3000); 
     } catch (error) {
+     
+      console.error("Error sending password reset email:", error);
       setError(error.message);
       setMessage('');
     }
@@ -43,7 +45,7 @@ const ForgotPasswordPage = () => {
             required
           />
         </div>
-        <button className='passsword' type="submit">Send Password Reset Email</button>
+        <button className='password-btn' type="submit">Send Password Reset Email</button>
         {message && <p style={{ color: 'green' }}>{message}</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
