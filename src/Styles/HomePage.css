@@ -1,161 +1,141 @@
-
 .home-page {
-    text-align: center;
-    padding: 20px;
-    
-  }
-  
-  .image-container {
-    max-width: 100%; 
-    height: 100%;
-    margin: 0 auto;
-  }
-  
-  .hotel-image {
-    width: 100%; 
-    height: auto;
-    max-height: 600px; 
-  }
-  
-  .image-message {
-    font-style: italic;
-    color: #af960c;
-    margin-top: 10px;
-    font-size: 1.2rem; 
-  }
-
-  .border-box{
-    border: 2px solid rgb(228, 225, 225); 
-
-  padding: 10px;          
-  margin: 10px;          
-  
-
-  }
-
-
-.room-offers {
-    margin-top: 20px;
-    color: #032B44;
-  }
-  
-  .room-card {
-    display: inline-block;
-    width: 500px;
-    height: auto;
-    margin: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-    overflow: hidden;
-  }
-  
-  .room-image {
-    width: 90%;
-    height: 300px;
-   
-  }
-  
-  .room-price {
-    font-weight: bold;
-    color: white;
-    background-color: #af960c;
-    width: 60px;
-   
-   
-  }
-  
-  .room-description {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: black;
-  }
-
-.date-picker {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .date-picker label {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-  }
-
-  .guests {
-    display: flex;
-    justify-content: space-between;
-    height: 1px;
-  
-  }
-  
-  .guest-group {
-    display: flex;
-    align-items: center;
-
-    
-  }
-  
-  .guest-group label {
-    margin-right: 10px;
-  }
-  
-  .guest-group button {
-    background-color: #032b44;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .guest-group span {
-    margin: 0 10px;
-    font-size: 1.4em;
-  }
-
-
-
-  /* .container {
-    background-color: #032b44;
-    padding: 20px;
-  } */
-
-  .guests-container {
-    background-color: #ffffff; 
-    padding: 20px;
-    margin: 20px 0; 
-   
-  }    
-
-  .Label{
-    color: #032b44;
-    font-size: large;
-  }
-
-  .room-description-container {
-    background-color: white;
-    padding: 10px; 
-    
-  }
-  
-
-  .number {
-    color: black;
-    font-size: 1.5em; 
-    margin: 0 10px; 
-  }
-
-
-  .submit-btn{
-    background-color: #af960c; 
-    color: #032B44;
-    font-size: large;
-    
-  }
-.footer-container{
-  background-color: #af960c;
+  text-align: center;
+  padding: 20px;
 }
 
+.image-container {
+  max-width: 100%; 
+  height: auto; 
+  margin: 0 auto;
+}
+
+.hotel-image {
+  width: 100%; 
+  height: auto;
+  max-height: 600px; 
+}
+
+.image-message {
+  font-style: italic;
+  color: #af960c;
+  margin-top: 10px;
+  font-size: 1.2rem; 
+}
+
+.border-box {
+  border: 2px solid rgb(228, 225, 225); 
+  padding: 10px;          
+  margin: 10px;          
+}
+
+.room-offers {
+  margin-top: 20px;
+  color: #032B44;
+}
+
+.room-card {
+  display: inline-block;
+  width: 100%; 
+  max-width: 500px; 
+  height: auto;
+  margin: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: auto; 
+  max-height: 300px; 
+}
+
+.room-price {
+  font-weight: bold;
+  color: white;
+  background-color: #af960c;
+  width: 60px;
+}
+
+.room-description {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: black;
+}
+
+.date-picker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap; 
+}
+
+.date-picker label {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-bottom: 10px;
+}
+
+.guests {
+  display: flex;
+  justify-content: space-between;
+  height: auto; /
+}
+
+.guest-group {
+  display: flex;
+  align-items: center;
+}
+
+.guest-group label {
+  margin-right: 10px;
+}
+
+.guest-group button {
+  background-color: #032b44;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.guest-group span {
+  margin: 0 10px;
+  font-size: 1.4em;
+}
+
+.guests-container {
+  background-color: #ffffff; 
+  padding: 20px;
+  margin: 20px 0; 
+}
+
+.Label {
+  color: #032b44;
+  font-size: large;
+}
+
+.room-description-container {
+  background-color: white;
+  padding: 10px; 
+}
+
+.number {
+  color: black;
+  font-size: 1.5em; 
+  margin: 0 10px; 
+}
+
+.submit-btn {
+  background-color: #af960c; 
+  color: #032B44;
+  font-size: large;
+}
+
+.footer-container {
+  background-color: #af960c;
+}
 
 .footer {
   background-color: #032B44;
@@ -164,9 +144,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
- 
 }
-
 
 .footer-links {
   display: flex;
@@ -176,7 +154,6 @@
   flex-direction: column;
 }
 
-
 .footer-links a {
   text-decoration: none;
   color: white; 
@@ -184,33 +161,26 @@
   font-weight: 500; 
 }
 
-
 .footer-links a:hover {
   color: #0056b3;
 }
 
-
 .social-media-links {
   margin-bottom: 20px;
 }
-
 
 .social-media-links a {
   text-decoration: none;
   color: white; 
   margin: 0 10px;
   font-size: 24px;
-  float: left;
-  margin-top: 30px;
-  
 }
-
 
 .social-media-links a:hover {
   color: #007bff; 
 }
 
-.pp{
+.pp {
   float: right;
   margin-top: 20px;
   color: white;
@@ -219,24 +189,20 @@
 .right-link {
   display: flex;
   align-items: center;
- 
-  
 }
-
 
 .footer-branding h1 {
   margin: 0;
   font-family: 'Jim Nightshade', cursive; 
   font-size: 24px; 
   color: #af960c; 
-  margin-right: 1500px;
-}  
+}
+
 .footer-branding .slogan {
   margin: 5px 0 0;
   font-family: 'Jim Nightshade', cursive; 
   font-size: 16px; 
   color: white;
-  margin-right: 1500px;
 }
 
 .booking-form {
@@ -246,28 +212,26 @@
   margin-top: 20px;
 }
 
-.label-Check-In{
-  color: #032B44;
-
-}
-
-.label-Check-Out{
+.label-Check-In {
   color: #032B44;
 }
 
-.check-availability-button{
+.label-Check-Out {
+  color: #032B44;
+}
+
+.check-availability-button {
   padding: 8px;
   font-size: 20px;
   background-color: #af960c;
   color: #032B44;
-
 }
 
-h3{
-  color:#af960c;
-  
+h3 {
+  color: #af960c;
 }
-.image-message border-box{
+
+.image-message.border-box {
   color: #af960c;
 }
 
@@ -279,17 +243,51 @@ h3{
 }
 
 
+@media (max-width: 768px) {
+  .room-card {
+      width: 100%;
+      max-width: 100%; 
+  }
+  
+  .date-picker label {
+      width: 100%;
+  }
 
+  .guests {
+      flex-direction: column; 
+  }
 
+  .guest-group {
+      justify-content: center; 
+  }
 
+  .footer-links {
+      flex-direction: column; 
+  }
 
+  .footer-branding h1, .footer-branding .slogan {
+      margin-right: 0; 
+  }
 
+  .submit-btn {
+      width: 100%; 
+  }
 
+  .check-availability-button {
+      width: 100%;
+  }
+}
 
- 
+@media (max-width: 480px) {
+  .room-price {
+      width: auto;
+  }
+  
+  .number {
+      font-size: 1.2em;
+  }
 
-
-
-
-
-
+  .image-message {
+      font-size: 1rem; 
+  }
+}

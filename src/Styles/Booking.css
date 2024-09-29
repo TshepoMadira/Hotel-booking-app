@@ -44,7 +44,15 @@
   flex: 1 1 calc(33% - 20px);
   cursor: pointer;
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
 
+
+
+.room-box img {
+  max-width: 100%; 
+  height: auto;    
+  max-height: 150px;
+  margin-bottom: 10px; 
 }
 
 .room-box:hover {

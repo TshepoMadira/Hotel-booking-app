@@ -35,7 +35,7 @@ const TermsAndConditions = () => {
                 <p>We may update these Terms from time to time. We will notify you of any significant changes by posting the new Terms on our app and updating the effective date. Your continued use of the app after such changes constitutes your acceptance of the new Terms.</p>
 
                 <h2>7. Intellectual Property</h2>
-                <p>All content and materials available through the app, including text, graphics, logos, and software, are the property of [Your Company] or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+                <p>All content and materials available through the app, including text, graphics, logos, and software, are the property of Paragon Hotel or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
 
                 <h2>8. Limitation of Liability</h2>
                 <p>To the fullest extent permitted by law, [Your Company] is not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app or any booking, even if we have been advised of the possibility of such damages.</p>
@@ -45,11 +45,11 @@ const TermsAndConditions = () => {
 
                 <h2>10. Contact Us</h2>
                 <p>If you have any questions about these Terms or our app, please contact us at:</p>
-                <div className="contact-info">
+                {/* <div className="contact-info">
                     <p><strong>Email:</strong> [paragonhotel@gmail.com]</p>
                     <p><strong>Phone:</strong> [079 123 4567]</p>
                     <p><strong>Address:</strong> [5 Spoorweg Street brits South Africa]</p>
-                </div>
+                </div> */}
             </main>
         </div>
     );

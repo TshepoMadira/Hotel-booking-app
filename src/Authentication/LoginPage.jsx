@@ -65,11 +65,14 @@ const LoginPage = () => {
         </form>
 
         <div style={{ marginTop: '10px' }}>
-          <a href="/forgot-password">Forgot Password?</a>
-        </div>
-        <div style={{ marginTop: '10px' }}>
-          <a href="/signup">Need an account? Sign Up</a>
-        </div>
+  <a href="/forgot-password" style={{ color: '#af960c' }}>Forgot Password?</a>
+</div>
+<div style={{ marginTop: '10px' }}>
+  <a href="/signup" style={{ color: '#af960c' }}>Need an account? Sign Up</a>
+</div>
+
+
+
       </div>
     </div>
   );

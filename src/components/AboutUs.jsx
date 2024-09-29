@@ -14,7 +14,7 @@ const AboutUs = () => {
       </Link>
 
       <h2>About Us</h2>
-      <p>
+      <p className='history'>
         [Paragon] is a premier destination for travelers seeking comfort and luxury. Our hotel offers a range of amenities to ensure a memorable stay, including [Free wifi for travellers]. Located in the heart of Brits, we are just minutes away from [Harteebeesport Dam].
       </p>
 
@@ -31,7 +31,7 @@ const AboutUs = () => {
           <a href="https://www.gps.ie/">gps trackers</a>
         </iframe>
       </div>
-      <p>Address: 5 Spoorweg Street Brits 0250 South Africa</p>
+      <p className='Address'>Address: 5 Spoorweg Street Brits 0250 South Africa</p>
     </div>
   );
 };

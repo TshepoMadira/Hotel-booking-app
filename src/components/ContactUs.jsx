@@ -1,9 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import styles from '../Styles/ContactUs.module.css';
 
 const ContactUs = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleBackHome = () => {
+    navigate('/'); // Navigate to the home page
+  };
+
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Contact Us</h2>
@@ -31,6 +38,11 @@ const ContactUs = () => {
           <p>info@example.com</p>
         </div>
       </div>
+
+      {/* Back to Home Button */}
+      <button className={styles.backButton} onClick={handleBackHome}>
+        Back to Home
+      </button>
     </div>
   );
 };

@@ -169,6 +169,7 @@ function BookingPlatform() {
                             value={checkinDate}
                             onChange={(e) => setCheckinDate(e.target.value)}
                             required
+                            min={new Date().toISOString().split("T")[0]} // Disable past dates for check-in
                         />
                     </label>
                     <label>
@@ -178,6 +179,7 @@ function BookingPlatform() {
                             value={checkoutDate}
                             onChange={(e) => setCheckoutDate(e.target.value)}
                             required
+                            min={checkinDate || new Date().toISOString().split("T")[0]} // Disable past dates for check-out and check against check-in date
                         />
                     </label>
                     <label>

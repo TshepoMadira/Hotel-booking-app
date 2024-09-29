@@ -3,13 +3,13 @@ import { db } from '../components/Firebase';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-// Fetch Accommodations
+
 export const fetchAccommodations = createAsyncThunk('accommodations/fetch', async () => {
   const querySnapshot = await getDocs(collection(db, 'accommodations'));
   return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 });
 
-// Add Accommodation with Image Upload
+
 export const addAccommodation = createAsyncThunk(
   'accommodations/add',
   async (newAccommodation, { rejectWithValue }) => {
@@ -18,7 +18,7 @@ export const addAccommodation = createAsyncThunk(
     
     let imageUrl = '';
     
-    // Upload image if provided
+   
     if (image) {
       const storageRef = ref(storage, `accommodations/${Date.now()}_${image.name}`);
       try {
@@ -29,12 +29,12 @@ export const addAccommodation = createAsyncThunk(
       }
     }
     
-    // Prepare accommodation data
+   
     const accommodationData = {
       name,
       price,
       description,
-      imageUrl, // Store the image URL
+      imageUrl, 
     };
     
     try {
@@ -46,7 +46,7 @@ export const addAccommodation = createAsyncThunk(
   }
 );
 
-// Update Accommodation with Optional Image Upload
+
 export const updateAccommodation = createAsyncThunk(
   'accommodations/update',
   async ({ id, updatedData }, { rejectWithValue }) => {
@@ -55,7 +55,7 @@ export const updateAccommodation = createAsyncThunk(
     
     let imageUrl = '';
     
-    // Upload new image if provided
+   
     if (image) {
       const storageRef = ref(storage, `accommodations/${Date.now()}_${image.name}`);
       try {
@@ -65,8 +65,7 @@ export const updateAccommodation = createAsyncThunk(
         return rejectWithValue('Image upload failed');
       }
     }
-    
-    // Prepare updated accommodation data
+   
     const accommodationUpdates = {
       name,
       price,
@@ -87,7 +86,7 @@ export const updateAccommodation = createAsyncThunk(
   }
 );
 
-// Delete Accommodation
+
 export const deleteAccommodation = createAsyncThunk('accommodations/delete', async (id) => {
   await deleteDoc(doc(db, 'accommodations', id));
   return id;
@@ -103,7 +102,7 @@ const accommodationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Fetch Accommodations
+      
       .addCase(fetchAccommodations.pending, (state) => {
         state.status = 'loading';
       })
@@ -116,7 +115,7 @@ const accommodationsSlice = createSlice({
         state.error = action.error.message;
       })
       
-      // Add Accommodation
+      
       .addCase(addAccommodation.fulfilled, (state, action) => {
         state.list.push(action.payload);
       })
@@ -124,7 +123,7 @@ const accommodationsSlice = createSlice({
         state.error = action.payload;
       })
       
-      // Update Accommodation
+     
       .addCase(updateAccommodation.fulfilled, (state, action) => {
         const index = state.list.findIndex(item => item.id === action.payload.id);
         if (index !== -1) {
@@ -135,7 +134,7 @@ const accommodationsSlice = createSlice({
         state.error = action.payload;
       })
       
-      // Delete Accommodation
+    
       .addCase(deleteAccommodation.fulfilled, (state, action) => {
         state.list = state.list.filter(item => item.id !== action.payload);
       })
